@@ -15,33 +15,34 @@ export default function WarehouseListItem(props) {
   } = props;
 
   return (
-    <li>
-      <hr />
-      <div className="left-side">
-        <div className="top">
-          <h3>WAREHOUSE</h3>
-          <div>
-            <p>{name}</p>
-            <img src={arrowSymbol} alt="" />
+    <li className="warehouse-list-item">
+      <div className='warehouse-list-item__info'>
+        <div>
+          <div className="warehouse-list-item__name">
+            <h3>WAREHOUSE</h3>
+            <div>
+              <p>{name}</p>
+              <img src={arrowSymbol} alt="" />
+            </div>
+          </div>
+          <div className="warehouse-list-item__address">
+            <h3>ADDRESS</h3>
+            <p>{`${address}, ${city}, ${country}`}</p>
           </div>
         </div>
-        <div className="bottom">
-          <h3>ADDRESS</h3>
-          <p>{`${address}, ${city}, ${country}`}</p>
+        <div>
+          <div className="warehouse-list-item__contact-name">
+            <h3>CONTACT NAME</h3>
+            <p>{contactName}</p>
+          </div>
+          <div className="warehouse-list-item__contact-info">
+            <h3>CONTACT INFORMATION</h3>
+            <p>{contactPhone}</p>
+            <p>{contactEmail}</p>
+          </div>
         </div>
       </div>
-      <div className="right-side">
-        <div className="top">
-          <h3>CONTACT NAME</h3>
-          <p>{contactName}</p>
-        </div>
-        <div className="bottom">
-          <h3>CONTACT INFORMATION</h3>
-          <p>{contactPhone}</p>
-          <p>{contactEmail}</p>
-        </div>
-      </div>
-      <div className="actions">
+      <div className="warehouse-list-item__actions">
         <img src={deleteSymbol} alt="delete button" />
         <img src={editSymbol} alt="edit button" />
       </div>

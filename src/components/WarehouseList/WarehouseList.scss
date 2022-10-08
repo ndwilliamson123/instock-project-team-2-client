@@ -1,0 +1,25 @@
+.warehouse-list {
+    margin: 32px 16px 0 16px;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__search-bar {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        background-image: url("../../assets/icons/search-24px.svg");
+        background-repeat: no-repeat;
+        background-position: 100%;
+    }
+
+    &__add-btn {
+        margin-top: 16px;
+    }
+
+    &__list {
+        margin-top: 24px;
+    }
+}

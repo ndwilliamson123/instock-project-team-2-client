@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.warehouse-list-item {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #BDC5D5;
+
+    &__info {
+        display: flex;
+    }
+
+    &__name {
+        display: flex;
+        flex-direction: column;
+
+        & > div {
+            display: flex;
+
+            & > p {
+                //font color instock-indigo
+            }
+        }
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+    }
+}
