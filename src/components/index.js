@@ -1,4 +1,5 @@
-
+export { default as WarehouseList } from "./WarehouseList/WarehouseList"
+export { default as WarehouseListItem } from "./WarehouseListItem/WarehouseListItem"
 
 //example
 // export { default as Header } from "./Header/Header";
