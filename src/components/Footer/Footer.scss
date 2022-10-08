@@ -1,0 +1,22 @@
+// awaiting SCSS partials
+
+.footer {
+    background-color: #f7f8f9;
+
+    &__container {
+        @media screen and (min-width: 1280px) {
+            margin: auto;
+            width: 1020px;
+        }
+
+        @media screen and (min-width: 767px) {
+            padding: 32px;
+        }
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+    }
+    &__message {
+        // font scss
+    }
+}
