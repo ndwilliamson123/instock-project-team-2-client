@@ -1,0 +1,3 @@
+This folder is only meant to simulate the backend data until we connect the two together.
+
+Use this for now if you need the data for your front end work.
