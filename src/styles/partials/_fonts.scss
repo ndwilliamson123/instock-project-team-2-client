@@ -1,0 +1,68 @@
+// _FONTS.SCSS //
+
+@use './variables' as *;
+
+
+h1 {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    color: $fontColorBlack;
+
+    font-size: 32px;
+}
+
+
+h3 {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+
+    color: #2E66E6;
+}
+
+
+h4 {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+
+p {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    color: $fontColorBlack;
+
+    font-size: 14px;
+}
+
+
+p2 {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: $fontColorSlate;
+}
+
+
+p3 {
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;  
+    color: #5C667E;
+}
