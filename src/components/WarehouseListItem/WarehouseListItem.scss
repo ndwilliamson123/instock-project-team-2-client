@@ -1,16 +1,29 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// awaiting SCSS partials
 
 .warehouse-list-item {
     display: flex;
     flex-direction: column;
     border-top: 1px solid #BDC5D5;
+    margin: auto -24px 27px -24px;
+    padding-top: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 27px;
+    }
 
     &__info {
         display: flex;
+
+        & > div {
+            width: 50%;
+        }
+
+        & h3 {
+            margin-bottom: 4px;
+        }
     }
 
     &__name {
@@ -29,10 +42,17 @@
     &__address {
         display: flex;
         flex-direction: column;
+
+        margin-top: 16px;
+    }
+
+    &__contact-info {
+        margin-top: 16px;
     }
 
     &__actions {
         display: flex;
         justify-content: space-between;
+        margin-top: 19px;
     }
 }

@@ -3,16 +3,19 @@ import arrowSymbol from "../../assets/icons/chevron_right-24px.svg";
 import deleteSymbol from "../../assets/icons/delete_outline-24px.svg";
 import editSymbol from "../../assets/icons/edit-24px.svg";
 
-export default function WarehouseListItem(props) {
+export default function WarehouseListItem({ warehouse }) {
   const {
     name,
     address,
     city,
     country,
-    contactName,
-    contactPhone,
-    contactEmail,
-  } = props;
+  } = warehouse;
+
+  const {
+    name : contactName,
+    phone : contactPhone,
+    email : contactEmail
+  } = warehouse.contact
 
   return (
     <li className="warehouse-list-item">
