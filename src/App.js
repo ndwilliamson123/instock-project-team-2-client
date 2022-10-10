@@ -1,9 +1,9 @@
-import Mockup from "./components/Mockup/Mockup";
+import PopUpMsg from "./components/Mockup/PopUpMsg";
 
 export default function App() {
   return (
     <>
-      <Mockup />
+      <PopUpMsg />
     </>
   );
 }
