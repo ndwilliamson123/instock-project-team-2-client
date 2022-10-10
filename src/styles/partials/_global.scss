@@ -88,6 +88,20 @@ div.card {
         margin: 0;
         padding: 8px;
     }
+
+    &__body {
+        margin: 0;
+    }
+
+    &__copy {
+        padding: 40px;
+    }
+
+    &__footer {
+        margin: 0;
+        padding: 16px;
+        text-align: center;
+    }
 }
 
 
