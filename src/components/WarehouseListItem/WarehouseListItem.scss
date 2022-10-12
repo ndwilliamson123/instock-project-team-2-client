@@ -24,24 +24,54 @@ $desktop-width: 1280px;
     padding-top: 16px;
     padding-left: 24px;
     padding-right: 24px;
-    
 
+    @include tablet {
+        flex-direction: row;
+        padding-left: 32px;
+        padding-right: 32px;
+
+        &:first-child {
+            border: none;
+        }
+    }
+    
     &:last-child {
         margin-bottom: 0;
         padding-bottom: 27px;
     }
 
     h3 {
+        font-size: 11px;
+
         @include tablet {
             display: none;
+        }
+    }
+
+    p {
+        font-size: 13px;
+
+        @include tablet {
+            font-size: 14px;
         }
     }
 
     &__info {
         display: flex;
 
+        @include tablet {
+            &:first-child {
+                width: 85%;
+            }
+        }
+
         & > div {
             width: 50%;
+
+            @include tablet {
+                width: auto;
+                display: flex;
+            }
         }
 
         & h3 {
@@ -52,6 +82,10 @@ $desktop-width: 1280px;
     &__name {
         display: flex;
         flex-direction: column;
+
+        @include tablet {
+            margin-right: 25%;
+        }
 
         & > div {
             display: flex;
@@ -65,17 +99,39 @@ $desktop-width: 1280px;
     &__address {
         display: flex;
         flex-direction: column;
-
         margin-top: 16px;
+
+        @include tablet {
+            margin-top: 0;
+        }
     }
 
     &__contact-info {
         margin-top: 16px;
+        
+        @include tablet {
+            margin-top: 0;
+        }
     }
 
     &__actions {
         display: flex;
         justify-content: space-between;
         margin-top: 19px;
+
+        img {
+            height: 18px;
+        }
+
+        @include tablet {
+            margin-top: 0;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: flex-end;
+
+            & > * {
+                margin-right: 16px;
+            }
+        }
     }
 }

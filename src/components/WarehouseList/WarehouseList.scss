@@ -38,8 +38,8 @@ $desktop-width: 1280px;
         @include tablet {
             flex-direction: row;
             justify-content: space-between;
-            margin-left: 32px;
-            margin-right: 32px;
+            padding: 32px;
+            margin: 0;
         }
 
         & > div {
@@ -81,7 +81,51 @@ $desktop-width: 1280px;
 
         @include tablet {
             margin-top: 0;
+            padding: 8px 16px;
             height: 38px;
+        }
+    }
+
+    &__columns {
+        display: none;
+        background-color: #f7f8f9;
+        padding-top: 12px;
+        padding-bottom: 12px;
+
+        @include tablet {
+            display: flex;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        & > div {
+            display: flex;
+            align-items: center;
+
+            &:nth-child(1) {
+                margin-right: 10%;
+            }
+
+            &:nth-child(2) {
+                margin-right: 8%;
+            }
+
+            &:nth-child(3) {
+                margin-right: 3%;
+            }
+
+            &:nth-child(4) {
+                margin-right: 5%;
+            }
+
+            h3 {
+                font-size: 12px;
+            }
+
+            img {
+                height: 12px;
+                margin-left: 4px;
+            }
         }
     }
 
@@ -89,5 +133,9 @@ $desktop-width: 1280px;
         margin-top: 24px;
         margin-left: 24px;
         margin-right: 24px;
+
+        @include tablet {
+            margin-top: 0;
+        }
     }
 }
