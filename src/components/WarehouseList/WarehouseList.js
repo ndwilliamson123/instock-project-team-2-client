@@ -8,21 +8,20 @@ export default function WarehouseList() {
     <div className="warehouse-list">
       <div className="warehouse-list__header">
         <h1 className="warehouse-list__title">Warehouses</h1>
+        <div>
           <input
-           className='warehouse-list__search-bar'
+            className="warehouse-list__search-bar"
             type="text"
             placeholder="Search..."
           ></input>
-        <button className="warehouse-list__add-btn">
-          &#43;Add New Warehouse
-        </button>
+          <button className="warehouse-list__add-btn">
+            &#43;Add New Warehouse
+          </button>
+        </div>
       </div>
       <ul className="warehouse-list__list">
         {warehouseData.map((warehouse) => (
-          <WarehouseListItem
-            key={warehouse.id}
-            warehouse={warehouse}
-          />
+          <WarehouseListItem key={warehouse.id} warehouse={warehouse} />
         ))}
       </ul>
     </div>

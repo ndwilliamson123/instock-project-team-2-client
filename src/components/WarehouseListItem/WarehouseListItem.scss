@@ -1,5 +1,21 @@
 // awaiting SCSS partials
 
+// temp Media Breakpoints
+$tablet-width: 768px;
+$desktop-width: 1280px;
+
+@mixin tablet {
+    @media (min-width: $tablet-width) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: $desktop-width) {
+      @content;
+    }
+  }
+
 .warehouse-list-item {
     display: flex;
     flex-direction: column;
@@ -8,10 +24,17 @@
     padding-top: 16px;
     padding-left: 24px;
     padding-right: 24px;
+    
 
     &:last-child {
         margin-bottom: 0;
         padding-bottom: 27px;
+    }
+
+    h3 {
+        @include tablet {
+            display: none;
+        }
     }
 
     &__info {

@@ -1,11 +1,10 @@
-import { WarehouseList } from './components';
-import Footer from './components/Footer/Footer'
+import { WarehouseList, Footer } from "./components";
 
 export default function App() {
   return (
     <>
-    <WarehouseList />
-    <Footer />
+      <WarehouseList />
+      <Footer />
     </>
   );
 }
