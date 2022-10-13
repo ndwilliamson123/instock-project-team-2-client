@@ -28,6 +28,11 @@ $desktop-width: 1280px;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
 
+    @include tablet {
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+
     &__header {
         display: flex;
         flex-direction: column;
@@ -86,51 +91,51 @@ $desktop-width: 1280px;
         }
     }
 
-    &__columns {
-        display: none;
-        background-color: #f7f8f9;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-left: 32px;
-        padding-right: 32px;
+    // &__columns {
+    //     display: none;
+    //     background-color: #f7f8f9;
+    //     padding-top: 12px;
+    //     padding-bottom: 12px;
+    //     padding-left: 32px;
+    //     padding-right: 32px;
 
-        @include tablet {
-            display: flex;
-            // justify-content: space-between;
+    //     @include tablet {
+    //         display: flex;
+    //         // justify-content: space-between;
 
-        }
+    //     }
 
-        & > div {
-            display: flex;
-            align-items: center;
+    //     & > div {
+    //         display: flex;
+    //         align-items: center;
 
-            &:nth-child(1) {
-                width: 15%;
-            }
+    //         &:nth-child(1) {
+    //             width: 15%;
+    //         }
 
-            &:nth-child(2) {
-                width: 16%;
-            }
+    //         &:nth-child(2) {
+    //             width: 16%;
+    //         }
 
-            &:nth-child(3) {
-                width: 16%;
-            }
+    //         &:nth-child(3) {
+    //             width: 16%;
+    //         }
 
-            &:nth-child(4) {
-                width: 22%;
-            }
+    //         &:nth-child(4) {
+    //             width: 22%;
+    //         }
 
 
-            h3 {
-                font-size: 12px;
-            }
+    //         h3 {
+    //             font-size: 12px;
+    //         }
 
-            img {
-                height: 12px;
-                margin-left: 4px;
-            }
-        }
-    }
+    //         img {
+    //             height: 12px;
+    //             margin-left: 4px;
+    //         }
+    //     }
+    // }
 
     &__list {
         margin-top: 24px;

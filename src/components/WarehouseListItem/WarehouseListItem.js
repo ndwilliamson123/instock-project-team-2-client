@@ -2,6 +2,7 @@ import "./WarehouseListItem.scss";
 import arrowSymbol from "../../assets/icons/chevron_right-24px.svg";
 import deleteSymbol from "../../assets/icons/delete_outline-24px.svg";
 import editSymbol from "../../assets/icons/edit-24px.svg";
+import sortSymbol from "../../assets/icons/sort-24px.svg";
 
 export default function WarehouseListItem({ warehouse }) {
   const {
@@ -19,6 +20,28 @@ export default function WarehouseListItem({ warehouse }) {
 
   return (
     <li className="warehouse-list-item">
+      <div className="warehouse-list-item__columns">
+        <div>
+          <h3>WAREHOUSE</h3>
+          <img src={sortSymbol} alt="delete button" />
+        </div>
+        <div>
+          <h3>ADDRESS</h3>
+          <img src={sortSymbol} alt="delete button" />
+        </div>
+        <div>
+          <h3>CONTACT NAME</h3>
+          <img src={sortSymbol} alt="delete button" />
+        </div>
+        <div>
+          <h3>CONTACT INFORMATION</h3>
+          <img src={sortSymbol} alt="delete button" />
+        </div>
+        <div>
+          <h3>ACTIONS</h3>
+        </div>
+      </div>
+      <div className="warehouse-list-item__data">
       <div className='warehouse-list-item__info'>
         <div>
           <div className="warehouse-list-item__name">
@@ -48,6 +71,7 @@ export default function WarehouseListItem({ warehouse }) {
       <div className="warehouse-list-item__actions">
         <img src={deleteSymbol} alt="delete button" />
         <img src={editSymbol} alt="edit button" />
+      </div>
       </div>
     </li>
   );
