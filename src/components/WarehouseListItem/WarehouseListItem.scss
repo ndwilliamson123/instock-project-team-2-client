@@ -20,13 +20,14 @@ $desktop-width: 1280px;
     display: flex;
     flex-direction: column;
     border-top: 1px solid #BDC5D5;
-    margin: auto -24px 27px -24px;
+    margin: auto -24px 16px -24px;
     padding-top: 16px;
     padding-left: 24px;
     padding-right: 24px;
 
     @include tablet {
         flex-direction: row;
+        justify-content: space-between;
         padding-left: 32px;
         padding-right: 32px;
 
@@ -60,9 +61,9 @@ $desktop-width: 1280px;
         display: flex;
 
         @include tablet {
-            &:first-child {
-                width: 85%;
-            }
+            align-items: center;
+
+
         }
 
         & > div {
@@ -71,6 +72,10 @@ $desktop-width: 1280px;
             @include tablet {
                 width: auto;
                 display: flex;
+
+                &:first-child {
+                    // width: 50%;
+                }
             }
         }
 
@@ -83,12 +88,15 @@ $desktop-width: 1280px;
         display: flex;
         flex-direction: column;
 
+
         @include tablet {
-            margin-right: 25%;
+            justify-content: center;
+            // margin-right: 25%;
         }
 
         & > div {
             display: flex;
+            align-items: center;
 
             & > p {
                 //font color instock-indigo
@@ -103,6 +111,7 @@ $desktop-width: 1280px;
 
         @include tablet {
             margin-top: 0;
+            justify-content: center;
         }
     }
 

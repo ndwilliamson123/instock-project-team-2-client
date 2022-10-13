@@ -91,11 +91,13 @@ $desktop-width: 1280px;
         background-color: #f7f8f9;
         padding-top: 12px;
         padding-bottom: 12px;
+        padding-left: 32px;
+        padding-right: 32px;
 
         @include tablet {
             display: flex;
-            padding-left: 32px;
-            padding-right: 32px;
+            // justify-content: space-between;
+
         }
 
         & > div {
@@ -103,20 +105,21 @@ $desktop-width: 1280px;
             align-items: center;
 
             &:nth-child(1) {
-                margin-right: 10%;
+                width: 15%;
             }
 
             &:nth-child(2) {
-                margin-right: 8%;
+                width: 16%;
             }
 
             &:nth-child(3) {
-                margin-right: 3%;
+                width: 16%;
             }
 
             &:nth-child(4) {
-                margin-right: 5%;
+                width: 22%;
             }
+
 
             h3 {
                 font-size: 12px;
