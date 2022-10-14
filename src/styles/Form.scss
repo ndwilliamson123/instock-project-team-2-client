@@ -1,0 +1,61 @@
+// FORM.SCSS //
+
+@use './partials/variables' as *;
+
+
+input[type=text].inputText {
+    padding: 16px;
+    width: 274px;
+    height: 38px;
+    background: $bgColorWhite;
+    border: 1px solid #BDC5D5;
+    border-radius: 20px;
+
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: $fontColorSlate;
+}
+
+
+button {
+    background-color: $bgColorIndigo;
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 20px;
+
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    color : $fontColorWhite;
+}
+
+button:hover,
+button:focus {
+    background-color: $bgColorDrkIndigo;
+}
+
+
+button.btnHeader {
+    background-color: $bgColorTop;
+    padding: 8px 16px;
+    margin-left: 8px;
+    border: 0;
+    border-radius: 20px;
+
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color : $fontColorWhite;
+}
+
+button.btnHeader:hover, button.active {
+    background-color: $bgColorBlack;
+    font-weight: bold;
+}

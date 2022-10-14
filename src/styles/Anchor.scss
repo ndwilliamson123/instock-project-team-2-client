@@ -1,0 +1,56 @@
+// ANCHOR.SCSS //
+
+@use './partials/variables' as *;
+
+
+.anchorButton {
+    background-color: $bgColorIndigo;
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 20px;
+
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration: none;
+    color : $fontColorWhite;
+}
+  
+.anchorButton:hover,
+.anchorButton:focus {
+    background-color: $bgColorDrkIndigo;
+}
+
+
+.anchorModalButton {
+    background-color: $bgColorWhite;
+    padding: 8px 16px;
+    margin-left: 8px;
+    border: 1px solid $bgColorSlate;
+    border-radius: 20px;
+
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration: none;
+    color : $fontColorSlate;
+}
+  
+.anchorModalButton:hover,
+.anchorModalButton:focus {
+    color: $fontColorWhite;
+    font-weight: bold;
+    background-color: $bgColorRed;
+}
+
+
+.anchorModalClose {
+    margin-left: auto;
+    text-decoration: none;
+    font-weight: bold;
+    color : $fontColorBlack;
+}

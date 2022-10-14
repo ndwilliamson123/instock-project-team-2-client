@@ -1,0 +1,10 @@
+// FOOTER.SCSS //
+
+@use './partials/variables' as *;
+
+
+div.footer {
+    margin: 0;
+    padding: 16px;
+    text-align: center;
+}
