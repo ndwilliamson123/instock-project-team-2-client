@@ -20,6 +20,27 @@ export default function WarehouseList() {
           </button>
         </div>
       </div>
+      <div className="warehouse-list__columns">
+        <div>
+          <h3>WAREHOUSE</h3>
+          <img src={sortSymbol} alt="delete button" />
+        </div>
+        <div>
+          <h3>ADDRESS</h3>
+          <img src={sortSymbol} alt="delete button" />
+        </div>
+        <div>
+          <h3>CONTACT NAME</h3>
+          <img src={sortSymbol} alt="delete button" />
+        </div>
+        <div>
+          <h3>CONTACT INFORMATION</h3>
+          <img src={sortSymbol} alt="delete button" />
+        </div>
+        <div>
+          <h3>ACTIONS</h3>
+        </div>
+      </div>
       <ul className="warehouse-list__list">
         {warehouseData.map((warehouse) => (
           <WarehouseListItem key={warehouse.id} warehouse={warehouse} />
