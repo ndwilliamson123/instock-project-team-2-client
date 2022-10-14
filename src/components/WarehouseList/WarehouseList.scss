@@ -24,13 +24,17 @@ $desktop-width: 1280px;
 
 .warehouse-list {
   margin: 0 16px;
-
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
   border-radius: 3px;
 
   @include tablet {
     margin-left: 32px;
     margin-right: 32px;
+  }
+
+  @include desktop {
+    width: 1020px;
+    margin: auto;
   }
 
   &__header {
@@ -45,6 +49,11 @@ $desktop-width: 1280px;
       justify-content: space-between;
       padding: 32px;
       margin: 0;
+    }
+
+    @include desktop {
+      padding-left: 40px;
+      padding-right: 40px;
     }
 
     & > div {
@@ -93,10 +102,11 @@ $desktop-width: 1280px;
 
   &__columns {
     display: none;
+    width: 100%;
 
     @include tablet {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: 1fr 1fr 1fr 1.3fr 1fr;
       background-color: #f7f8f9;
       padding-top: 11px;
       padding-bottom: 11px;
@@ -104,8 +114,16 @@ $desktop-width: 1280px;
       padding-right: 32px;
     }
 
+    @include desktop {
+      grid-template-columns: 1fr 1.9fr 1fr 1fr 1fr;
+    }
+
     h3 {
       font-size: 12px;
+    }
+
+    img {
+      height: 12px;
     }
 
     & > div {
@@ -113,7 +131,7 @@ $desktop-width: 1280px;
       align-items: center;
 
       &:last-child {
-        justify-content: center;
+        justify-content: flex-end;
       }
     }
   }

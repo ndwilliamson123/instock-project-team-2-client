@@ -2,6 +2,7 @@ import "./WarehouseList.scss";
 import sortSymbol from "../../assets/icons/sort-24px.svg";
 import { WarehouseListItem } from "../index";
 
+//importing temp data until connected to backend
 import warehouseData from "../../assets/TEMP_DATA/warehouses.json";
 
 export default function WarehouseList() {
@@ -16,7 +17,7 @@ export default function WarehouseList() {
             placeholder="Search..."
           ></input>
           <button className="warehouse-list__add-btn">
-            &#43;Add New Warehouse
+            &#43; Add New Warehouse
           </button>
         </div>
       </div>

@@ -5,7 +5,6 @@ import editSymbol from "../../assets/icons/edit-24px.svg";
 
 export default function WarehouseListItem({ warehouse }) {
   const { name, address, city, country } = warehouse;
-
   const {
     name: contactName,
     phone: contactPhone,
