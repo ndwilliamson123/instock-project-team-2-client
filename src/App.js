@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import Welcome from "./components/Mockup/Welcome";
 import Popup from "./components/Mockup/Popup";
 import Modal from "./components/Mockup/Modal";
+import InventoryAll from "./components/InventoryAll/InventoryAll";
 
 export default function App() {
   return (
@@ -30,12 +31,18 @@ export default function App() {
               <Popup />
               <Modal />
             </Route>
+
+            <Route exact path="/inventory">
+              <PageTitle pgtitle='Inventory' />
+              <InventoryAll />
+              <Modal />
+            </Route>
+
           </Switch>
 
+          <Footer />
         </div>
         
-
-        <Footer />
       </Router>
     </>
   );
