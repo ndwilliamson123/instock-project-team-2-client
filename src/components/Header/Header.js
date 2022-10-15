@@ -14,9 +14,8 @@ const Header = () => {
 
                 <div className='header__item'>
                     <div className='header__subitem'>
-                        <a href='/' className='headerButton'>Index</a>
-                        <a href='/popup' className='headerButton'>Pop-Up</a>
-                        <a href='/' className='headerButton'>List All</a>
+                        <a href='/warehouses' className='headerButton'>Warehouses</a>
+                        <a href='/inventory' className='headerButton active'>Inventory</a>
                     </div>                    
                 </div>
             </div>

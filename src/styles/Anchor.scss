@@ -2,6 +2,10 @@
 
 @use './partials/variables' as *;
 
+a {
+    color: $bgColorIndigo;
+    text-decoration: none;
+}
 
 .anchorButton {
     background-color: $bgColorIndigo;
