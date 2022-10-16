@@ -1,7 +1,19 @@
+@mixin tablet {
+    @media screen and (min-width: 767px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
+
 .anw {
     &__pageheader {
         display: flex;
-        border-bottom: #bdc5d5 solid 2px;
+        border-bottom: #bdc5d5 solid 1px;
         padding: 16px;
         gap: 16px;
     }
@@ -17,19 +29,41 @@
         margin: 0 0 24px 0;
     }
 
-    &__new-warehouse {
+    &__new-warehouse-container {
+        @include tablet {
+            display: flex;
+        }
     }
 
     &__warehouse-details {
-        border-bottom: #bdc5d5 solid 2px;
-        padding: 16px;
+        @include tablet {
+            border-bottom: none;
+            flex-grow: 1;
+            border-right: #bdc5d5 solid 1px;
+            margin: 24px 0;
+            padding: 0 24px;
+        }
+        border-bottom: #bdc5d5 solid 1px;
+        margin: 16px 0;
+        padding: 0 16px;
     }
 
     &__contact-details {
-        padding: 16px;
+        @include tablet {
+            flex-grow: 1;
+            margin: 24px 0;
+            padding: 0 24px;
+        }
+        margin: 16px 0;
+        padding: 0 16px;
     }
 
     &__submit {
+        @include tablet {
+            justify-content: end;
+            padding: 24px;
+        }
+
         padding: 16px;
         display: flex;
         gap: 16px;

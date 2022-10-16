@@ -1,4 +1,20 @@
+@mixin tablet {
+    @media screen and (min-width: 767px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
+
 .white-button {
+    @include tablet {
+        width: auto;
+    }
+
     background-color: #ffffff;
     height: 36px;
     padding: 0 16px;

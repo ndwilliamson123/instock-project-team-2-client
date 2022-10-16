@@ -17,19 +17,21 @@ export default function AddNewWarehouse() {
                 <h1 className="anw__title"> Add New Warehouse</h1>
             </div>
             <form className="anw__new-warehouse">
-                <div className="anw__warehouse-details">
-                    <h2 className="anw__subheader">Warehouse Details</h2>
-                    <WarehouseInput variable="Warehouse Name" />
-                    <WarehouseInput variable="Street Address" />
-                    <WarehouseInput variable="City" />
-                    <WarehouseInput variable="Country" />
-                </div>
-                <div className="anw__contact-details">
-                    <h2 className="anw__subheader">Warehouse Details</h2>
-                    <WarehouseInput variable="Contact Name" />
-                    <WarehouseInput variable="Position" />
-                    <WarehouseInput variable="Phone Number" />
-                    <WarehouseInput variable="Email" />
+                <div className="anw__new-warehouse-container">
+                    <div className="anw__warehouse-details">
+                        <h2 className="anw__subheader">Warehouse Details</h2>
+                        <WarehouseInput variable="Warehouse Name" />
+                        <WarehouseInput variable="Street Address" />
+                        <WarehouseInput variable="City" />
+                        <WarehouseInput variable="Country" />
+                    </div>
+                    <div className="anw__contact-details">
+                        <h2 className="anw__subheader">Contact Details</h2>
+                        <WarehouseInput variable="Contact Name" />
+                        <WarehouseInput variable="Position" />
+                        <WarehouseInput variable="Phone Number" />
+                        <WarehouseInput variable="Email" />
+                    </div>
                 </div>
                 <div className="anw__submit">
                     <WhiteButton buttonText="Cancel" type="reset" />
