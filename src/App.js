@@ -1,9 +1,9 @@
-import Footer from "./components/Footer/Footer";
+import AddNewWarehouse from "./components/AddNewWarehouse/AddNewWarehouse";
 
 export default function App() {
     return (
         <>
-            <Footer />
+            <AddNewWarehouse />
         </>
     );
 }

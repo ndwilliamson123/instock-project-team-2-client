@@ -1,0 +1,23 @@
+.warehouse-input {
+    margin-bottom: 16px;
+
+    &__title {
+        margin: 0;
+        padding-bottom: 4px;
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    &__input {
+        box-sizing: border-box;
+        border-radius: 20px;
+        border: #bdc5d5 solid 1px;
+        width: 100%;
+        padding: 0 16px;
+        height: 36px;
+        &:focus {
+            border: #2e66e5 solid 1px;
+            outline: none;
+        }
+    }
+}
