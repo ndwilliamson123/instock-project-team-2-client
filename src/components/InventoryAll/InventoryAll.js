@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from 'react';
 import axios from "axios";
 
+import Pagination from '../Pagination/Pagination';
 
 
-const InventoryAll = props => {
+let PageSize = 10;
+
+export default function App() {
 
     const [invList, setInvList] = useState([]);
     
@@ -16,8 +19,16 @@ const InventoryAll = props => {
             .get('http://localhost:8080/inventory')
             .then(res => {
                 setInvList(res.data);
+            })
+            .catch((error) => {
+                console.log(error);
             });
     }
+
+
+    useEffect(() => {
+        getInventoryList();
+      }, []);
 
 
     const getStatus = (status) => {
@@ -28,63 +39,57 @@ const InventoryAll = props => {
         }
     }
 
-    useEffect(() => {
-        getInventoryList();
-      }, []);
+    const [currentPage, setCurrentPage] = useState(1);
 
+    const currentTableData = invList.slice(0, 10)
+    
+    
 
-    return(
+    return (
         <>
         <div>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>
-                            Inventory Item
-                            <span className='tableAction'>
-                                <img 
-                                    src={require('../../assets/icons/sort-24px.svg').default}
-                                    alt='Sort' className="iconAction" />
-                            </span>
-                        </th>
-                        <th>
-                            Category
-                            <span className='tableAction'>
-                                <img 
-                                    src={require('../../assets/icons/sort-24px.svg').default}
-                                    alt='Sort' className="iconAction" />
-                            </span>
-                        </th>
-                        <th>
-                            Status
-                            <span className='tableAction'>
-                                <img 
-                                    src={require('../../assets/icons/sort-24px.svg').default}
-                                    alt='Sort' className="iconAction" />
-                            </span>
-                        </th>
-                        <th>
-                            Qty
-                            <span className='tableAction'>
-                                <img 
-                                    src={require('../../assets/icons/sort-24px.svg').default}
-                                    alt='Sort' className="iconAction" />
-                            </span>
-                        </th>
-                        <th>
-                            Warehouse
-                            <span className='tableAction'>
-                                <img 
-                                    src={require('../../assets/icons/sort-24px.svg').default}
-                                    alt='Sort' className="iconAction" />
-                            </span>
-                        </th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                
+            <table className='table'>
+                <thead><tr>
+                    <th>
+                        Inventory Item
+                        <span className='tableAction'>
+                            <img src={require('../../assets/icons/sort-24px.svg').default}
+                            alt='Sort' className="iconAction" />
+                        </span>
+                    </th>
+                    <th>
+                        Category
+                        <span className='tableAction'>
+                            <img src={require('../../assets/icons/sort-24px.svg').default}
+                            alt='Sort' className="iconAction" />
+                        </span>
+                    </th>
+                    <th>
+                        Status
+                        <span className='tableAction'>
+                            <img src={require('../../assets/icons/sort-24px.svg').default}
+                            alt='Sort' className="iconAction" />
+                        </span>
+                    </th>
+                    <th>
+                        Qty
+                        <span className='tableAction'>
+                            <img src={require('../../assets/icons/sort-24px.svg').default}
+                            alt='Sort' className="iconAction" />
+                        </span>
+                    </th>
+                    <th>
+                        Warehouse
+                        <span className='tableAction'>
+                            <img src={require('../../assets/icons/sort-24px.svg').default}
+                            alt='Sort' className="iconAction" />
+                        </span>
+                    </th>
+                    <th>Actions</th>                    
+                </tr></thead>
+
                 <tbody>
-                {invList.map((item) => (
+                {currentTableData.map((item) => (
                     <tr key={item.id}>
                         <td>
                             <a href={'/inventory/item?id=' + item.id}>
@@ -117,20 +122,25 @@ const InventoryAll = props => {
                             </span>
                         </td>
                     </tr>
-                ))}
+                    ))
+                }
                 </tbody>
-                
             </table>
         </div>
-        </>
-    )
+        <ul>
+            <li>cur pg: {currentPage}</li>
+            <li>totalCount={invList.length}</li>
+            <li>pageSize={PageSize}</li>
+        </ul>
+        <Pagination
+            className="pagination-bar"
+            currentPage={currentPage}
+            totalCount={invList.length}
+            pageSize={PageSize}
+            onPageChange={page => setCurrentPage(page)}
+        />
+        
+        
+    </>
+    );
 }
-
-
-export default InventoryAll;
-
-
-
-//references:
-//https://blog.logrocket.com/creating-react-sortable-table/
-//https://github.com/Ibaslogic/react-sortable-table/blob/main/src/index.css

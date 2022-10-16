@@ -62,6 +62,14 @@
     margin-right: 8px;
 }
 
+.table td.recordError {
+    background-color: rgba(201, 69, 21, 0.07);
+    height: 400px;
+    color: $bgColorRed;
+    text-align: center;
+}
+
+
 .btnStatus {
     background: rgba(201, 69, 21, 0.07);
     border: 1px solid $bgColorRed;
