@@ -15,9 +15,37 @@
         width: 100%;
         padding: 0 16px;
         height: 36px;
+
+        &--error {
+            @extend .warehouse-input__input;
+            border: #c94515 solid 1px;
+        }
+
         &:focus {
             border: #2e66e5 solid 1px;
             outline: none;
         }
+    }
+
+    &__error {
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+    }
+
+    &__error-font {
+        color: #c94515;
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    &__error-image {
+        display: inline-block;
+        padding-right: 4px;
+        width: 13px;
+    }
+
+    &__nodisplay {
+        display: none;
     }
 }
