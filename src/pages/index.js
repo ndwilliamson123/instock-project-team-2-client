@@ -1,7 +1,3 @@
-
-
-//example
-// export { default as HomePage } from "./HomePage/HomePage";
-// export { default as COMPONENT_NAME } from "./COMPONENT_NAME/COMPONENT_NAME";
-
-//then other components just need to reference this 'index.js' file to import all components in this '\pages' folder
+export { default as PageNotFound } from "./PageNotFound/PageNotFound";
+export { default as Warehouses } from "./Warehouses/Warehouses"
+export { default as Inventory } from "./Inventory/Inventory"
