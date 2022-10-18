@@ -1,7 +1,7 @@
 @use "../../../styles/partials/mixins" as *;
 @use "../../../styles/partials/variables" as *;
 
-.blue-button {
+.red-button {
     @include H3;
     @include tablet {
         width: auto;
@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $instock-indigo;
+    background-color: $red;
     height: 36px;
     padding: 0 16px;
     border-radius: 20px;

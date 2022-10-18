@@ -1,14 +1,14 @@
-import "./BlueButton.scss";
+import "./RedButton.scss";
 
-export default function BlueButton({ buttonText, type, image }) {
+export default function RedButton({ buttonText, type, image }) {
     return (
         <>
-            <button type={type} className="blue-button">
+            <button type={type} className="red-button">
                 <img
                     src={image}
                     // if no image tag is needed, this wll hide the image tag
 
-                    className={!image ? "blue-button__noimage" : null}
+                    className={!image ? "red-button__noimage" : null}
                     alt="buttonpic"
                 ></img>
                 {buttonText}
