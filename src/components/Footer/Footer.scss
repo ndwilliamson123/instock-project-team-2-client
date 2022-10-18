@@ -1,9 +1,11 @@
 // awaiting SCSS partials
+@use "../../styles/partials/mixins" as *;
 
 .footer {
     background-color: #f7f8f9;
 
     &__container {
+        @include H1;
         @media screen and (min-width: 1280px) {
             margin: auto;
             width: 1020px;

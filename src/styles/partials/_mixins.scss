@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "fonts" as *;
 
 // Media Queries
 
@@ -21,9 +22,9 @@
         font-size: 32px;
         line-height: 40px;
     }
+    font-family: TitilliumWeb-SemiBold;
     font-size: 28px;
     line-height: 36px;
-    font-weight: 600;
 }
 
 @mixin H2 {
@@ -31,6 +32,7 @@
         font-size: 24px;
         line-height: 32px;
     }
+    font-family: TitilliumWeb-SemiBold;
     font-size: 20px;
     line-height: 28px;
     font-weight: 600;
@@ -41,7 +43,8 @@
         font-size: 14px;
         line-height: 22px;
     }
-    font-size: 13spx;
+    font-family: TitilliumWeb-SemiBold;
+    font-size: 13px;
     line-height: 20px;
     font-weight: 600;
 }
@@ -51,6 +54,7 @@
         font-size: 12px;
         line-height: 18px;
     }
+    font-family: TitilliumWeb-SemiBold;
     font-size: 11px;
     line-height: 16px;
     font-weight: 600;
@@ -61,6 +65,7 @@
         font-size: 16px;
         line-height: 28px;
     }
+    font-family: TitilliumWeb-Regular;
     font-size: 15px;
     line-height: 26px;
 }
@@ -70,6 +75,7 @@
         font-size: 14px;
         line-height: 22px;
     }
+    font-family: TitilliumWeb-Regular;
     font-size: 13px;
     line-height: 20px;
 }
@@ -79,6 +85,7 @@
         font-size: 12px;
         line-height: 18px;
     }
+    font-family: TitilliumWeb-Regular;
     font-size: 11px;
     line-height: 16px;
 }
