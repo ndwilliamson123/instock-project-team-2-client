@@ -1,0 +1,26 @@
+@use "../../../styles/partials/mixins" as *;
+@use "../../../styles/partials/variables" as *;
+
+.blue-button {
+    @include H3;
+    @include tablet {
+        width: auto;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $instock-indigo;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 20px;
+    border: none;
+    color: $white;
+    width: 100%;
+
+    &__image {
+    }
+
+    &__noimage {
+        display: none;
+    }
+}
