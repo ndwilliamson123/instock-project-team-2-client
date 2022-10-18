@@ -1,0 +1,98 @@
+@use "variables" as *;
+
+// Media Queries
+
+@mixin tablet {
+    @media screen and (min-width: $tabletsize) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktopsize) {
+        @content;
+    }
+}
+
+// TypeKit
+
+@mixin H1 {
+    @include tablet {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+}
+
+@mixin H2 {
+    @include tablet {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+@mixin H3 {
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+@mixin H4 {
+    @include tablet {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+@mixin P1 {
+    @include tablet {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    font-size: 15px;
+    line-height: 26px;
+}
+
+@mixin P2 {
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    font-size: 13px;
+    line-height: 20px;
+}
+
+@mixin P3 {
+    @include tablet {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    font-size: 11px;
+    line-height: 16px;
+}
+
+// Note: if you set this on your outer most container, it will do the margins automatically for all 3 media. Can remove if prefer not to use this.
+
+@mixin page-sidemargins {
+    @include tablet {
+        padding: 0 36px;
+    }
+    @include desktop {
+        padding: 0;
+        width: 1020px;
+        margin: auto;
+    }
+    padding: 0 16px;
+}
