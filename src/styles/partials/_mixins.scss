@@ -17,7 +17,7 @@
 
 // TypeKit
 
-@mixin H1 {
+@mixin page-header {
     @include tablet {
         font-size: 32px;
         line-height: 40px;
@@ -27,7 +27,7 @@
     line-height: 36px;
 }
 
-@mixin H2 {
+@mixin subheader {
     @include tablet {
         font-size: 24px;
         line-height: 32px;
@@ -38,7 +38,7 @@
     font-weight: 600;
 }
 
-@mixin H3 {
+@mixin labels {
     @include tablet {
         font-size: 14px;
         line-height: 22px;
@@ -49,7 +49,7 @@
     font-weight: 600;
 }
 
-@mixin H4 {
+@mixin table-header {
     @include tablet {
         font-size: 12px;
         line-height: 18px;
@@ -60,7 +60,7 @@
     font-weight: 600;
 }
 
-@mixin P1 {
+@mixin body-large {
     @include tablet {
         font-size: 16px;
         line-height: 28px;
@@ -70,7 +70,7 @@
     line-height: 26px;
 }
 
-@mixin P2 {
+@mixin body-medium {
     @include tablet {
         font-size: 14px;
         line-height: 22px;
@@ -80,7 +80,7 @@
     line-height: 20px;
 }
 
-@mixin P3 {
+@mixin body-small {
     @include tablet {
         font-size: 12px;
         line-height: 18px;
