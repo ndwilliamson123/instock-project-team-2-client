@@ -1,9 +1,11 @@
 import "./AddNewWarehouse.scss";
 import backIcon from "../../assets/icons/arrow_back-24px.svg";
-import WarehouseInput from "../WarehouseInput/WarehouseInput";
-import BlueButton from "../BlueButton/BlueButton";
-import WhiteButton from "../WhiteButton/WhiteButton";
 import React from "react";
+import {
+    BlueButton,
+    WhiteButton,
+    WarehouseInput,
+} from "../../components/index";
 // import axios from "axios";
 
 export default class AddNewWarehouse extends React.Component {
@@ -23,8 +25,6 @@ export default class AddNewWarehouse extends React.Component {
             errors: {},
         };
     }
-    // const port = 8080;
-    // axios.post(`http://localhost:${port}`, { var: "test" }).then().catch();
 
     contactSubmit(e) {
         e.preventDefault();
@@ -32,6 +32,8 @@ export default class AddNewWarehouse extends React.Component {
         if (this.handleValidation()) {
             // add API
             // alert("Form submitted");
+            // const port = 8080;
+            // axios.post(`http://localhost:${port}`, { var: "test" }).then().catch();
         } else {
             console.log("Form has errors.");
         }
@@ -198,7 +200,7 @@ export default class AddNewWarehouse extends React.Component {
                     <div className="anw__submit">
                         <WhiteButton
                             buttonText="Cancel"
-                            type="reset"
+                            type="click"
                             buttonFunction={this.resetFields}
                         />
                         <BlueButton

@@ -11,3 +11,9 @@ export { default as EditItem } from "./EditItem/EditItem";
 export { default as DeleteItem } from "./DeleteItem/DeleteItem";
 
 export { default as Footer } from "./Footer/Footer";
+
+export { default as BlueButton } from "./Buttons/BlueButton/BlueButton";
+export { default as WhiteButton } from "./Buttons/WhiteButton/WhiteButton";
+export { default as RedButton } from "./Buttons/RedButton/RedButton";
+
+export { default as WarehouseInput } from "./WarehouseInput/WarehouseInput";
