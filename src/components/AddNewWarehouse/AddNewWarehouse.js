@@ -1,10 +1,10 @@
 import "./AddNewWarehouse.scss";
-import backIcon from "../../assets/icons/arrow_back-24px.svg";
 import React from "react";
 import {
     BlueButton,
     WhiteButton,
     WarehouseInput,
+    AddEditSubheader,
 } from "../../components/index";
 // import axios from "axios";
 
@@ -13,14 +13,17 @@ export default class AddNewWarehouse extends React.Component {
         super();
         this.state = {
             fields: {
-                wname: "",
-                streetaddress: "",
+                id: "",
+                name: "",
+                address: "",
                 city: "",
                 country: "",
-                contactname: "",
-                position: "",
-                phonenumber: "",
-                email: "",
+                contact: {
+                    name: "",
+                    position: "",
+                    phone: "",
+                    email: "",
+                },
             },
             errors: {},
         };
@@ -42,16 +45,19 @@ export default class AddNewWarehouse extends React.Component {
     resetFields = () => {
         this.setState({
             fields: {
-                wname: "",
-                streetaddress: "",
+                id: "",
+                name: "",
+                address: "",
                 city: "",
                 country: "",
-                contactname: "",
-                position: "",
-                phonenumber: "",
-                email: "",
+                contact: {
+                    name: "",
+                    position: "",
+                    phone: "",
+                    email: "",
+                },
+                errors: {},
             },
-            errors: {},
         });
     };
 
@@ -61,13 +67,13 @@ export default class AddNewWarehouse extends React.Component {
         let formIsValid = true;
 
         //Name
-        if (!fields["wname"]) {
+        if (!fields["name"]) {
             formIsValid = false;
-            errors["wname"] = "This field is required";
+            errors["name"] = "This field is required";
         }
-        if (!fields["streetaddress"]) {
+        if (!fields["address"]) {
             formIsValid = false;
-            errors["streetaddress"] = "This field is required";
+            errors["address"] = "This field is required";
         }
         if (!fields["city"]) {
             formIsValid = false;
@@ -77,19 +83,19 @@ export default class AddNewWarehouse extends React.Component {
             formIsValid = false;
             errors["country"] = "This field is required";
         }
-        if (!fields["contactname"]) {
+        if (!fields.contact["name"]) {
             formIsValid = false;
             errors["contactname"] = "This field is required";
         }
-        if (!fields["position"]) {
+        if (!fields.contact["position"]) {
             formIsValid = false;
             errors["position"] = "This field is required";
         }
-        if (!fields["phonenumber"]) {
+        if (!fields.contact["phonenumber"]) {
             formIsValid = false;
             errors["phonenumber"] = "This field is required";
         }
-        if (!fields["email"]) {
+        if (!fields.contact["email"]) {
             formIsValid = false;
             errors["email"] = "This field is required";
         }
@@ -107,10 +113,10 @@ export default class AddNewWarehouse extends React.Component {
     render() {
         return (
             <main className="anw">
-                <div className="anw__pageheader">
-                    <img src={backIcon} alt="back arrow"></img>
-                    <h1 className="anw__title"> Add New Warehouse</h1>
-                </div>
+                <AddEditSubheader
+                    title={"Add New Warehouse"}
+                    link={"/warehouses"}
+                />
                 <form
                     className="anw__new-warehouse"
                     onSubmit={this.contactSubmit.bind(this)}
@@ -122,21 +128,21 @@ export default class AddNewWarehouse extends React.Component {
                             </h2>
                             <WarehouseInput
                                 variable="Warehouse Name"
-                                fields={this.state.fields["wname"]}
+                                fields={this.state.fields["name"]}
                                 handleChange={this.handleChange.bind(
                                     this,
                                     "wname"
                                 )}
-                                error={this.state.errors["wname"]}
+                                error={this.state.errors["name"]}
                             />
                             <WarehouseInput
                                 variable="Street Address"
-                                fields={this.state.fields["streetaddress"]}
+                                fields={this.state.fields["address"]}
                                 handleChange={this.handleChange.bind(
                                     this,
-                                    "streetaddress"
+                                    "address"
                                 )}
-                                error={this.state.errors["streetaddress"]}
+                                error={this.state.errors["address"]}
                             />
                             <WarehouseInput
                                 variable="City"
@@ -161,7 +167,9 @@ export default class AddNewWarehouse extends React.Component {
                             <h2 className="anw__subheader">Contact Details</h2>
                             <WarehouseInput
                                 variable="Contact Name"
-                                fields={this.state.fields["contactname"]}
+                                fields={
+                                    this.state.fields.contact["contactname"]
+                                }
                                 handleChange={this.handleChange.bind(
                                     this,
                                     "contactname"
@@ -170,7 +178,7 @@ export default class AddNewWarehouse extends React.Component {
                             />
                             <WarehouseInput
                                 variable="Position"
-                                fields={this.state.fields["position"]}
+                                fields={this.state.fields.contact["position"]}
                                 handleChange={this.handleChange.bind(
                                     this,
                                     "position"
@@ -179,7 +187,9 @@ export default class AddNewWarehouse extends React.Component {
                             />
                             <WarehouseInput
                                 variable="Phone Number"
-                                fields={this.state.fields["phonenumber"]}
+                                fields={
+                                    this.state.fields.contact["phonenumber"]
+                                }
                                 handleChange={this.handleChange.bind(
                                     this,
                                     "phonenumber"
@@ -188,7 +198,7 @@ export default class AddNewWarehouse extends React.Component {
                             />
                             <WarehouseInput
                                 variable="Email"
-                                fields={this.state.fields["email"]}
+                                fields={this.state.fields.contact["email"]}
                                 handleChange={this.handleChange.bind(
                                     this,
                                     "email"

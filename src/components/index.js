@@ -17,3 +17,4 @@ export { default as WhiteButton } from "./Buttons/WhiteButton/WhiteButton";
 export { default as RedButton } from "./Buttons/RedButton/RedButton";
 
 export { default as WarehouseInput } from "./WarehouseInput/WarehouseInput";
+export { default as AddEditSubheader } from "./AddSubheader/AddEditSubheader";

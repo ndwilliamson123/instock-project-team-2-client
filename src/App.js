@@ -6,7 +6,7 @@ export default function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <AddNewWarehouse />
+                {/* <AddNewWarehouse /> */}
                 <Route
                     path="/warehouses"
                     component={(props) => <Warehouses {...props} />}
