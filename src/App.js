@@ -6,7 +6,6 @@ import { Warehouses, Inventory, PageNotFound } from "./pages/index";
 export default function App() {
     return (
         <BrowserRouter>
-            <AddEditSubheader title="Add Warehouse" />
             <Switch>
                 <Route
                     path="/warehouses"
