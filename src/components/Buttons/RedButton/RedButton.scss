@@ -2,7 +2,7 @@
 @use "../../../styles/partials/variables" as *;
 
 .red-button {
-    @include H3;
+    @include labels;
     @include tablet {
         width: auto;
     }
