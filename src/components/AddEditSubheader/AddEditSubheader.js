@@ -4,10 +4,9 @@ import "./AddEditSubheader.scss";
 export default function AddEditSubheader({ title, link }) {
     return (
         <div className="add-edit-header">
-            {/* Hook up your link here */}
-            {/* <Link> */}
-            <img src={backIcon} alt="back arrow" />
-            {/* </Link> */}
+            <Link to={link} className="add-edit-header__link">
+                <img src={backIcon} alt="back arrow" />
+            </Link>
             <h1 className="add-edit-header__title">{title}</h1>
         </div>
     );
