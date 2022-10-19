@@ -1,5 +1,6 @@
 import "./AddNewWarehouse.scss";
 import React from "react";
+import { Link } from "react-router-dom";
 import {
     BlueButton,
     WhiteButton,
@@ -18,12 +19,10 @@ export default class AddNewWarehouse extends React.Component {
                 address: "",
                 city: "",
                 country: "",
-                contact: {
-                    name: "",
-                    position: "",
-                    phone: "",
-                    email: "",
-                },
+                contactname: "",
+                position: "",
+                phone: "",
+                email: "",
             },
             errors: {},
         };
@@ -50,12 +49,10 @@ export default class AddNewWarehouse extends React.Component {
                 address: "",
                 city: "",
                 country: "",
-                contact: {
-                    name: "",
-                    position: "",
-                    phone: "",
-                    email: "",
-                },
+                contactname: "",
+                position: "",
+                phone: "",
+                email: "",
                 errors: {},
             },
         });
@@ -131,7 +128,7 @@ export default class AddNewWarehouse extends React.Component {
                                 fields={this.state.fields["name"]}
                                 handleChange={this.handleChange.bind(
                                     this,
-                                    "wname"
+                                    "name"
                                 )}
                                 error={this.state.errors["name"]}
                             />
@@ -167,9 +164,7 @@ export default class AddNewWarehouse extends React.Component {
                             <h2 className="anw__subheader">Contact Details</h2>
                             <WarehouseInput
                                 variable="Contact Name"
-                                fields={
-                                    this.state.fields.contact["contactname"]
-                                }
+                                fields={this.state.fields["contactname"]}
                                 handleChange={this.handleChange.bind(
                                     this,
                                     "contactname"
@@ -178,7 +173,7 @@ export default class AddNewWarehouse extends React.Component {
                             />
                             <WarehouseInput
                                 variable="Position"
-                                fields={this.state.fields.contact["position"]}
+                                fields={this.state.fields["position"]}
                                 handleChange={this.handleChange.bind(
                                     this,
                                     "position"
@@ -187,9 +182,7 @@ export default class AddNewWarehouse extends React.Component {
                             />
                             <WarehouseInput
                                 variable="Phone Number"
-                                fields={
-                                    this.state.fields.contact["phonenumber"]
-                                }
+                                fields={this.state.fields["phonenumber"]}
                                 handleChange={this.handleChange.bind(
                                     this,
                                     "phonenumber"
@@ -198,7 +191,7 @@ export default class AddNewWarehouse extends React.Component {
                             />
                             <WarehouseInput
                                 variable="Email"
-                                fields={this.state.fields.contact["email"]}
+                                fields={this.state.fields["email"]}
                                 handleChange={this.handleChange.bind(
                                     this,
                                     "email"
@@ -208,11 +201,13 @@ export default class AddNewWarehouse extends React.Component {
                         </div>
                     </div>
                     <div className="anw__submit">
-                        <WhiteButton
-                            buttonText="Cancel"
-                            type="click"
-                            buttonFunction={this.resetFields}
-                        />
+                        <Link to="/warehouses" className="anw__cancel-link">
+                            <WhiteButton
+                                buttonText="Cancel"
+                                type="click"
+                                buttonFunction={this.resetFields}
+                            />
+                        </Link>
                         <BlueButton
                             buttonText="+ Add Warehouse"
                             type="submit"
