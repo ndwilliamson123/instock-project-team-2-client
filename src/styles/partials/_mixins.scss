@@ -1,4 +1,5 @@
 @use "variables" as *;
+@use "fonts" as *;
 
 // Media Queries
 
@@ -16,69 +17,72 @@
 
 // TypeKit
 
-@mixin H1 {
+@mixin page-header {
     @include tablet {
         font-size: 32px;
         line-height: 40px;
     }
+    font-family: TitilliumWeb-SemiBold;
     font-size: 28px;
     line-height: 36px;
-    font-weight: 600;
 }
 
-@mixin H2 {
+@mixin subheader {
     @include tablet {
         font-size: 24px;
         line-height: 32px;
     }
+    font-family: TitilliumWeb-SemiBold;
     font-size: 20px;
     line-height: 28px;
-    font-weight: 600;
 }
 
-@mixin H3 {
+@mixin labels {
     @include tablet {
         font-size: 14px;
         line-height: 22px;
     }
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 600;
-}
-
-@mixin H4 {
-    @include tablet {
-        font-size: 12px;
-        line-height: 18px;
-    }
-    font-size: 11px;
-    line-height: 16px;
-    font-weight: 600;
-}
-
-@mixin P1 {
-    @include tablet {
-        font-size: 16px;
-        line-height: 28px;
-    }
-    font-size: 15px;
-    line-height: 26px;
-}
-
-@mixin P2 {
-    @include tablet {
-        font-size: 14px;
-        line-height: 22px;
-    }
+    font-family: TitilliumWeb-SemiBold;
     font-size: 13px;
     line-height: 20px;
 }
 
-@mixin P3 {
+@mixin table-header {
     @include tablet {
         font-size: 12px;
         line-height: 18px;
     }
+    font-family: TitilliumWeb-SemiBold;
+    font-size: 11px;
+    line-height: 16px;
+}
+
+@mixin body-large {
+    @include tablet {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    font-family: TitilliumWeb-Regular;
+    font-size: 15px;
+    line-height: 26px;
+}
+
+@mixin body-medium {
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    font-family: TitilliumWeb-Regular;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+@mixin body-small {
+    @include tablet {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    font-family: TitilliumWeb-Regular;
     font-size: 11px;
     line-height: 16px;
 }
