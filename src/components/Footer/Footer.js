@@ -1,7 +1,7 @@
 import "./Footer.scss";
 
 export default function Footer() {
-    const copyrightMessage = "InStock Inc. All Rights Reserved.";
+    const copyrightMessage = "© InStock Inc. All Rights Reserved.";
 
     return (
         <footer className="footer">

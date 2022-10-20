@@ -1,24 +1,27 @@
-// awaiting SCSS partials
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .footer {
-  background-color: #f7f8f9;
+    background-color: $light-grey;
+    bottom: 0%;
+    position: fixed;
+    width: 100%;
 
-  &__container {
-    @media screen and (min-width: 1280px) {
-      margin: auto;
-      width: 1020px;
+    &__container {
+        @include page-sidemargins;
+        @include desktop {
+            padding-bottom: 48px;
+        }
+        @include tablet {
+            padding-bottom: 40px;
+        }
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: center;
     }
 
-    @media screen and (min-width: 767px) {
-      padding: 32px;
+    &__message {
+        @include body-small;
+        color: $slate;
     }
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__message {
-    // font scss
-  }
 }
