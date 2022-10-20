@@ -11,3 +11,5 @@ export { default as EditItem } from "./EditItem/EditItem";
 export { default as DeleteItem } from "./DeleteItem/DeleteItem";
 
 export { default as Footer } from "./Footer/Footer";
+
+export { default as AddEditSubheader } from "./AddEditSubheader/AddEditSubheader";
