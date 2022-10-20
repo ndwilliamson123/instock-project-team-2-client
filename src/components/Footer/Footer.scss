@@ -1,24 +1,24 @@
 // awaiting SCSS partials
+@use "../../styles/partials/mixins" as *;
 
 .footer {
-    background-color: #f7f8f9;
+  background-color: #f7f8f9;
 
-    &__container {
-        padding: 40px;
-        display: flex;
-        justify-content: center;
-
-        @media screen and (min-width: 1280px) {
-            margin: auto;
-            width: 1020px;
-        }
-
-        @media screen and (min-width: 767px) {
-            padding: 32px;
-        }
+  &__container {
+    @media screen and (min-width: 1280px) {
+      margin: auto;
+      width: 1020px;
     }
 
-    &__message {
-        // font scss
+    @media screen and (min-width: 767px) {
+      padding: 32px;
     }
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__message {
+    // font scss
+  }
 }

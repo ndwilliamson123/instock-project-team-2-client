@@ -6,9 +6,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <label className="footer__message">
-          <sup>&#169;</sup>{` ${copyrightMessage}`}
-        </label>
+        <label className="footer__message">{copyrightMessage}</label>
       </div>
     </footer>
   );
