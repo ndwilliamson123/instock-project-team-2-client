@@ -19,3 +19,5 @@ export { default as MainSubHeader } from "./MainSubHeader/MainSubHeader";
 export { default as WarehousesListColumns } from "./WarehousesListColumns/WarehousesListColumns";
 
 export { default as Footer } from "./Footer/Footer";
+
+export { default as AddEditSubheader } from "./AddEditSubheader/AddEditSubheader";

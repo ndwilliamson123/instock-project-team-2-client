@@ -96,13 +96,13 @@
 // Note: if you set this on your outer most container, it will do the margins automatically for all 3 media. Can remove if prefer not to use this.
 
 @mixin page-sidemargins {
+    padding: 0 16px;
+    @include tablet {
+        padding: 0 32px;
+    }
     @include desktop {
         padding: 0;
         width: 1020px;
         margin: auto;
     }
-    @include tablet {
-        padding: 0 32px;
-    }
-    padding: 0 16px;
 }
