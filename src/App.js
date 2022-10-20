@@ -1,5 +1,4 @@
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import AddEditSubheader from "./components/AddEditSubheader/AddEditSubheader";
 import { Footer } from "./components/index";
 import { Warehouses, Inventory, PageNotFound } from "./pages/index";
 
