@@ -1,26 +1,37 @@
-import { Link, Route } from "react-router-dom";
-import { DeleteWarehouse } from "../../components/index";
+import "./WarehousesList.scss";
+import { Route } from "react-router-dom";
+import {
+    DeleteWarehouse,
+    MainSubHeader,
+    WarehousesListColumns,
+    WarehousesListItem,
+} from "../index";
+
+//importing temp data until connected to backend
+import warehouseData from "../../assets/TEMP_DATA/warehouses.json";
 
 export default function WareHousesList() {
-  console.log("warehouses list");
-  const warehouseName = "Manhattan";
-  return (
-    <>
-      <h1>Warehouse List</h1>
-      <Link to="/warehouses/add">Click here to add a warehouse</Link>
-      <Route
-        path="/warehouses/:warehouseName/delete"
-        component={(props) => <DeleteWarehouse {...props} />}
-      />
-      <div>
-        <Link to={`/warehouses/${warehouseName}`}>
-          <p>{warehouseName}</p>
-        </Link>
-        <Link to={`/warehouses/${warehouseName}/delete`}>
-          Click Me to delete
-        </Link>
-        <Link to={`/warehouses/${warehouseName}/edit`}>Click Me to edit</Link>
-      </div>
-    </>
-  );
+    return (
+        <>
+            <Route
+                path="/warehouses/:warehouseName/delete"
+                component={(props) => <DeleteWarehouse {...props} />}
+            />
+            <div className="warehouse-list">
+                <MainSubHeader
+                    title="Warehouses"
+                    buttonText={"+ Add New Warehouse"}
+                />
+                <WarehousesListColumns />
+                <ul className="warehouse-list__list">
+                    {warehouseData.map((warehouse) => (
+                        <WarehousesListItem
+                            key={warehouse.id}
+                            warehouse={warehouse}
+                        />
+                    ))}
+                </ul>
+            </div>
+        </>
+    );
 }

@@ -1,24 +1,10 @@
-// awaiting SCSS partials
-
-// temp Media Breakpoints
-$tablet-width: 768px;
-$desktop-width: 1280px;
-
-@mixin tablet {
-  @media (min-width: $tablet-width) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media (min-width: $desktop-width) {
-    @content;
-  }
-}
+@use "./../../styles/partials/global" as *;
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
 
 .warehouse-list-item {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   border-top: 1px solid #bdc5d5;
   margin: auto -24px 16px -24px;
   padding-top: 16px;
@@ -45,7 +31,7 @@ $desktop-width: 1280px;
   }
 
   h3 {
-    font-size: 11px;
+    @include table-header;
 
     @include tablet {
       display: none;
@@ -53,11 +39,7 @@ $desktop-width: 1280px;
   }
 
   p {
-    font-size: 13px;
-
-    @include tablet {
-      font-size: 14px;
-    }
+    @include body-medium;
   }
 
   &__info {
@@ -98,12 +80,16 @@ $desktop-width: 1280px;
       text-decoration: underline;
     }
 
-    & > div {
+    & > a > div {
       display: flex;
       align-items: center;
 
       & > p {
-        //font color instock-indigo
+        color: $instock-indigo;
+      }
+
+      & > img {
+        height: 20px;
       }
     }
   }
@@ -135,6 +121,8 @@ $desktop-width: 1280px;
 
   &__contact-info {
     margin-top: 16px;
+    display: flex;
+    flex-direction: column;
     order: 4;
 
     @include tablet {
