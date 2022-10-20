@@ -32,6 +32,7 @@ export default class AddNewWarehouse extends React.Component {
         e.preventDefault();
 
         if (this.handleValidation()) {
+            console.log("Form submitted");
             // add API
             // alert("Form submitted");
             // const port = 8080;
@@ -80,19 +81,19 @@ export default class AddNewWarehouse extends React.Component {
             formIsValid = false;
             errors["country"] = "This field is required";
         }
-        if (!fields.contact["name"]) {
+        if (!fields["contactname"]) {
             formIsValid = false;
             errors["contactname"] = "This field is required";
         }
-        if (!fields.contact["position"]) {
+        if (!fields["position"]) {
             formIsValid = false;
             errors["position"] = "This field is required";
         }
-        if (!fields.contact["phonenumber"]) {
+        if (!fields["phonenumber"]) {
             formIsValid = false;
             errors["phonenumber"] = "This field is required";
         }
-        if (!fields.contact["email"]) {
+        if (!fields["email"]) {
             formIsValid = false;
             errors["email"] = "This field is required";
         }
