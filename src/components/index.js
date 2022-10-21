@@ -20,4 +20,9 @@ export { default as WarehousesListColumns } from "./WarehousesListColumns/Wareho
 
 export { default as Footer } from "./Footer/Footer";
 
+export { default as BlueButton } from "./Buttons/BlueButton/BlueButton";
+export { default as WhiteButton } from "./Buttons/WhiteButton/WhiteButton";
+export { default as RedButton } from "./Buttons/RedButton/RedButton";
+
+export { default as WarehouseInput } from "./WarehouseInput/WarehouseInput";
 export { default as AddEditSubheader } from "./AddEditSubheader/AddEditSubheader";
