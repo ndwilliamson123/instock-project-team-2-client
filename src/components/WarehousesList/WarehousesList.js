@@ -1,4 +1,5 @@
 import "./WarehousesList.scss";
+import { Component } from "react";
 import { Route } from "react-router-dom";
 import {
     DeleteWarehouse,
@@ -6,32 +7,50 @@ import {
     WarehousesListColumns,
     WarehousesListItem,
 } from "../index";
+import axios from "axios";
 
-//importing temp data until connected to backend
-import warehouseData from "../../assets/TEMP_DATA/warehouses.json";
+export default class WareHousesList extends Component {
+    state = {
+        warehouses: [],
+    };
 
-export default function WareHousesList() {
-    return (
-        <>
-            <Route
-                path="/warehouses/:warehouseName/delete"
-                component={(props) => <DeleteWarehouse {...props} />}
-            />
-            <div className="warehouse-list">
-                <MainSubHeader
-                    title="Warehouses"
-                    buttonText={"+ Add New Warehouse"}
+    componentDidMount() {
+        axios
+            .get(`http://localhost:8080/warehouses`)
+            .then((response) => {
+                this.setState({
+                    warehouses: response.data,
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    render() {
+        const { warehouses } = this.state
+        return (
+            <>
+                <Route
+                    path="/warehouses/:warehouseName/delete"
+                    component={(props) => <DeleteWarehouse {...props} />}
                 />
-                <WarehousesListColumns />
-                <ul className="warehouse-list__list">
-                    {warehouseData.map((warehouse) => (
-                        <WarehousesListItem
-                            key={warehouse.id}
-                            warehouse={warehouse}
-                        />
-                    ))}
-                </ul>
-            </div>
-        </>
-    );
+                <div className="warehouse-list">
+                    <MainSubHeader
+                        title="Warehouses"
+                        buttonText={"+ Add New Warehouse"}
+                    />
+                    <WarehousesListColumns />
+                    <ul className="warehouse-list__list">
+                        {warehouses.map((warehouse) => (
+                            <WarehousesListItem
+                                key={warehouse.id}
+                                warehouse={warehouse}
+                            />
+                        ))}
+                    </ul>
+                </div>
+            </>
+        );
+    }
 }
