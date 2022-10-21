@@ -23,7 +23,8 @@ export default class WareHousesList extends Component {
                 });
             })
             .catch((error) => {
-                console.log(error);
+                console.log(error)
+                alert(error)
             });
     }
 
