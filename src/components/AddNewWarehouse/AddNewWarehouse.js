@@ -7,6 +7,7 @@ import {
     WarehouseInput,
     AddEditSubheader,
 } from "../../components/index";
+// TODO : Leaving the commented code once API is ready
 // import axios from "axios";
 
 export default class AddNewWarehouse extends React.Component {
@@ -32,13 +33,10 @@ export default class AddNewWarehouse extends React.Component {
         e.preventDefault();
 
         if (this.handleValidation()) {
-            console.log("Form submitted");
-            // add API
-            // alert("Form submitted");
+            // TODO : Leaving the commented code once API is ready
+            // console.log("Form has been submitted")
             // const port = 8080;
             // axios.post(`http://localhost:${port}`, { var: "test" }).then().catch();
-        } else {
-            console.log("Form has errors.");
         }
     }
 
