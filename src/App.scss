@@ -4,14 +4,3 @@
 @use './styles/partials/variables' as *;
 @use './styles/partials/fonts' as *;
 @use './styles/partials/global' as *;
-
-
-@use './styles/Header.scss' as *;
-@use './styles/Main.scss' as *;
-@use './styles/Modal.scss' as *;
-@use './styles/Table.scss' as *;
-@use './styles/Footer.scss' as *;
-
-
-@use './styles/Form.scss' as *;     //form elements
-@use './styles/Anchor.scss' as *;       //anchor links

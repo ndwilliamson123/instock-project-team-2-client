@@ -1,27 +1,35 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from "react";
 import axios from "axios";
 
-import Pagination from '../Pagination/Pagination';
+import './InventoryAll.scss';
+import { InventoryAllTable } from "./InventoryAllTable";
 
 
-let PageSize = 10;
+const InventoryAll = () => {
 
-export default function App() {
+    //columns
+    const invTblCols = [
+        { accessor: 'itemName', label: 'Inventory Item', tosort: 'Y' },
+        { accessor: 'category', label: 'Category', tosort: 'Y' },
+        { accessor: 'status', label: 'Status', tosort: 'Y' },
+        { accessor: 'quantity', label: 'Qty', tosort: 'Y' },
+        { accessor: 'warehouseName', label: 'Warehouse', tosort: 'Y' },
+        { accessor: '', label: 'Actions', tosort: 'N' },
+    ];
 
-    const [invList, setInvList] = useState([]);
     
+    //inventory data
+    const [invList, setInvList] = useState([]);
+
     const passInvList = (data) => {
         setInvList(data);
     };
-
+    
     const getInventoryList = () => {
         axios
             .get('http://localhost:8080/inventory')
             .then(res => {
                 setInvList(res.data);
-            })
-            .catch((error) => {
-                console.log(error);
             });
     }
 
@@ -31,116 +39,15 @@ export default function App() {
       }, []);
 
 
-    const getStatus = (status) => {
-        if (status.toLowerCase() === 'in stock'){
-            return 'btnStatus active'
-        } else {
-            return 'btnStatus'
-        }
-    }
-
-    const [currentPage, setCurrentPage] = useState(1);
-
-    const currentTableData = invList.slice(0, 10)
-    
-    
-
-    return (
+      return (
         <>
-        <div>
-            <table className='table'>
-                <thead><tr>
-                    <th>
-                        Inventory Item
-                        <span className='tableAction'>
-                            <img src={require('../../assets/icons/sort-24px.svg').default}
-                            alt='Sort' className="iconAction" />
-                        </span>
-                    </th>
-                    <th>
-                        Category
-                        <span className='tableAction'>
-                            <img src={require('../../assets/icons/sort-24px.svg').default}
-                            alt='Sort' className="iconAction" />
-                        </span>
-                    </th>
-                    <th>
-                        Status
-                        <span className='tableAction'>
-                            <img src={require('../../assets/icons/sort-24px.svg').default}
-                            alt='Sort' className="iconAction" />
-                        </span>
-                    </th>
-                    <th>
-                        Qty
-                        <span className='tableAction'>
-                            <img src={require('../../assets/icons/sort-24px.svg').default}
-                            alt='Sort' className="iconAction" />
-                        </span>
-                    </th>
-                    <th>
-                        Warehouse
-                        <span className='tableAction'>
-                            <img src={require('../../assets/icons/sort-24px.svg').default}
-                            alt='Sort' className="iconAction" />
-                        </span>
-                    </th>
-                    <th>Actions</th>                    
-                </tr></thead>
-
-                <tbody>
-                {currentTableData.map((item) => (
-                    <tr key={item.id}>
-                        <td>
-                            <a href={'/inventory/item?id=' + item.id}>
-                                {item.itemName} <img alt='Edit' className="iconAction"
-                                src={require('../../assets/icons/chevron_right-24px.svg').default} />
-                            </a>
-                        </td>
-                        <td>{item.category}</td>
-                        <td>
-                            <label className={getStatus(item.status)}>
-                                {item.status}
-                            </label>
-                        </td>
-                        <td>{item.quantity}</td>
-                        <td>{item.warehouseName}</td>
-                        <td>
-                            <span className='tableAction'>
-                                <a href={'/inventory/item?id=' + item.id + "&action=delete"}>
-                                <img 
-                                    src={require('../../assets/icons/delete_outline-24px.svg').default} 
-                                    alt='Delete' className="iconAction" />
-                                </a>
-                            </span>
-                            <span className='tableAction'>
-                                <a href={'/inventory/item?id=' + item.id + "&action=edit"}>
-                                <img 
-                                    src={require('../../assets/icons/edit-24px.svg').default} 
-                                    alt='Edit' className="iconAction" />
-                                </a>
-                            </span>
-                        </td>
-                    </tr>
-                    ))
-                }
-                </tbody>
-            </table>
+        <div className="inventoryAll">
+            <InventoryAllTable cols={invTblCols} rows={invList} />
         </div>
-        <ul>
-            <li>cur pg: {currentPage}</li>
-            <li>totalCount={invList.length}</li>
-            <li>pageSize={PageSize}</li>
-        </ul>
-        <Pagination
-            className="pagination-bar"
-            currentPage={currentPage}
-            totalCount={invList.length}
-            pageSize={PageSize}
-            onPageChange={page => setCurrentPage(page)}
-        />
-        
-        
-    </>
-    );
+        </>
+    )
 }
+
+
+
+export default InventoryAll;
