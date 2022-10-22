@@ -1,0 +1,72 @@
+@use "./../../styles/partials/global" as *;
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.details-header {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 32px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $cloud;
+
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+            padding: 32px;
+            margin: 0;
+        }
+
+        @include desktop {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        & > div {
+            display: flex;
+
+            & > a {
+                display: flex;
+                align-items: center;
+
+                & > img {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 12px;
+                }
+            }
+        }
+
+        & > a {
+            display: flex;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+
+            & button {
+                padding: 10.5px;
+
+                &> img {
+                    height: 15px;
+
+                    @include tablet {
+                        margin-right: 8px;
+                    }
+                }
+
+                & > span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__title {
+        @include page-header;
+    }
+}
