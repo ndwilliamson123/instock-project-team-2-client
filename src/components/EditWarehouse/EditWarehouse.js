@@ -20,12 +20,26 @@ export default class EditWarehouse extends React.Component {
                 address: "",
                 city: "",
                 country: "",
-                contactname: "",
-                position: "",
-                phone: "",
-                email: "",
+                contact: {
+                    name: "",
+                    position: "",
+                    phone: "",
+                    email: "",
+                },
             },
-            errors: {},
+            errors: {
+                id: "",
+                name: "",
+                address: "",
+                city: "",
+                country: "",
+                contact: {
+                    name: "",
+                    position: "",
+                    phone: "",
+                    email: "",
+                },
+            },
         };
     }
 
@@ -33,6 +47,7 @@ export default class EditWarehouse extends React.Component {
         e.preventDefault();
 
         if (this.handleValidation()) {
+            console.log(this.state);
             // TODO : Leaving the commented code once API is ready
             // console.log("Form has been submitted")
             // const port = 8080;
@@ -48,18 +63,32 @@ export default class EditWarehouse extends React.Component {
                 address: "",
                 city: "",
                 country: "",
-                contactname: "",
-                position: "",
-                phone: "",
-                email: "",
-                errors: {},
+                contact: {
+                    name: "",
+                    position: "",
+                    phone: "",
+                    email: "",
+                },
+            },
+            errors: {
+                id: "",
+                name: "",
+                address: "",
+                city: "",
+                country: "",
+                contact: {
+                    name: "",
+                    position: "",
+                    phone: "",
+                    email: "",
+                },
             },
         });
     };
 
     handleValidation() {
         let fields = this.state.fields;
-        let errors = {};
+        let errors = { contact: {} };
         let formIsValid = true;
 
         if (!fields["name"]) {
@@ -78,21 +107,21 @@ export default class EditWarehouse extends React.Component {
             formIsValid = false;
             errors["country"] = "This field is required";
         }
-        if (!fields["contactname"]) {
+        if (!fields.contact["name"]) {
             formIsValid = false;
-            errors["contactname"] = "This field is required";
+            errors.contact["name"] = "This field is required";
         }
-        if (!fields["position"]) {
+        if (!fields.contact["position"]) {
             formIsValid = false;
-            errors["position"] = "This field is required";
+            errors.contact["position"] = "This field is required";
         }
-        if (!fields["phone"]) {
+        if (!fields.contact["phone"]) {
             formIsValid = false;
-            errors["phone"] = "This field is required";
+            errors.contact["phone"] = "This field is required";
         }
-        if (!fields["email"]) {
+        if (!fields.contact["email"]) {
             formIsValid = false;
-            errors["email"] = "This field is required";
+            errors.contact["email"] = "This field is required";
         }
 
         this.setState({ errors: errors });
@@ -102,6 +131,12 @@ export default class EditWarehouse extends React.Component {
     handleChange(field, e) {
         let fields = this.state.fields;
         fields[field] = e.target.value;
+        this.setState({ fields });
+    }
+
+    handleChangeContact(field, e) {
+        let fields = this.state.fields;
+        fields.contact[field] = e.target.value;
         this.setState({ fields });
     }
 
@@ -164,39 +199,39 @@ export default class EditWarehouse extends React.Component {
                             </h2>
                             <WarehouseInput
                                 variable="Contact Name"
-                                fields={this.state.fields["contactname"]}
-                                handleChange={this.handleChange.bind(
+                                fields={this.state.fields.contact["name"]}
+                                handleChange={this.handleChangeContact.bind(
                                     this,
-                                    "contactname"
+                                    "name"
                                 )}
-                                error={this.state.errors["contactname"]}
+                                error={this.state.errors.contact["name"]}
                             />
                             <WarehouseInput
                                 variable="Position"
-                                fields={this.state.fields["position"]}
-                                handleChange={this.handleChange.bind(
+                                fields={this.state.fields.contact["position"]}
+                                handleChange={this.handleChangeContact.bind(
                                     this,
                                     "position"
                                 )}
-                                error={this.state.errors["position"]}
+                                error={this.state.errors.contact["position"]}
                             />
                             <WarehouseInput
                                 variable="Phone Number"
-                                fields={this.state.fields["phone"]}
-                                handleChange={this.handleChange.bind(
+                                fields={this.state.fields.contact["phone"]}
+                                handleChange={this.handleChangeContact.bind(
                                     this,
                                     "phone"
                                 )}
-                                error={this.state.errors["phone"]}
+                                error={this.state.errors.contact["phone"]}
                             />
                             <WarehouseInput
                                 variable="Email"
-                                fields={this.state.fields["email"]}
-                                handleChange={this.handleChange.bind(
+                                fields={this.state.fields.contact["email"]}
+                                handleChange={this.handleChangeContact.bind(
                                     this,
                                     "email"
                                 )}
-                                error={this.state.errors["email"]}
+                                error={this.state.errors.contact["email"]}
                             />
                         </div>
                     </div>
