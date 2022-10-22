@@ -2,22 +2,18 @@
 @use "./../../styles/partials/variables" as *;
 @use "./../../styles/partials/mixins" as *;
 
-.warehouse-list__columns {
+.selected-warehouse-inventory-list__columns {
     display: none;
     width: 100%;
 
     @include tablet {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1.3fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         background-color: $light-grey;
         padding-top: 11px;
         padding-bottom: 11px;
         padding-left: 32px;
         padding-right: 32px;
-    }
-
-    @include desktop {
-        grid-template-columns: 1fr 1.9fr 1fr 1fr 1fr;
     }
 
     h3 {

@@ -19,3 +19,4 @@ export { default as WarehouseInput } from "./WarehouseInput/WarehouseInput";
 export { default as AddEditSubheader } from "./AddEditSubheader/AddEditSubheader";
 export { default as DetailsSubHeader } from "./DetailsSubHeader/DetailsSubHeader";
 export { default as SelectedWarehouseInventoryListColumns } from "./SelectedWarehouseInventoryListColumns/SelectedWarehouseInventoryListColumns"
+export { default as SelectedWarehouseInventoryListItem } from "./SelectedWarehouseInventoryListItem/SelectedWarehouseInventoryListItem"

@@ -1,17 +1,15 @@
 import "./SelectedWarehouse.scss";
 import { Component } from "react";
 import axios from "axios";
+import { SelectedWarehouseInventoryListItem } from "../index";
 
 import {
     DetailsSubHeader,
     SelectedWarehouseInventoryListColumns,
-    WarehousesListItem,
 } from "../index";
 
-//temporary import of inventory data
+//temporary import of inventory data, will remove once backend is set up
 const inventories = require("../../assets/TEMP_DATA/inventories.json");
-let warehouses = [];
-
 export default class SelectedWarehouse extends Component {
     state = {
         warehouse: {},
@@ -22,13 +20,13 @@ export default class SelectedWarehouse extends Component {
         axios
             .get(`http://localhost:8080/warehouses`)
             .then((response) => {
-                warehouses = response.data;
                 this.setState({
                     warehouse: response.data.find(
                         (warehouse) =>
                             warehouse.name ===
                             this.props.match.params.warehouseName
                     ),
+                    //Will need to replace this with a second axios call once backend is set up
                     inventory: inventories.filter(
                         (item) =>
                             item.warehouseName ===
@@ -44,28 +42,39 @@ export default class SelectedWarehouse extends Component {
 
     render() {
         const { warehouse, inventory } = this.state;
-        console.log(warehouse);
-        console.log(inventory);
+        const { contact } = this.state.warehouse;
 
         return (
-            <>
-                <div className="warehouse-list">
-                    <DetailsSubHeader
-                        title={warehouse.name}
-                        buttonText="Edit"
-                    />
-                    <div>Warehouse Info Here</div>
-                    <SelectedWarehouseInventoryListColumns />
-                    <ul className="warehouse-list__list">
-                        {warehouses.map((warehouse) => (
-                            <WarehousesListItem
-                                key={warehouse.id}
-                                warehouse={warehouse}
-                            />
-                        ))}
-                    </ul>
+            <div className="warehouse-list">
+                <DetailsSubHeader title={warehouse.name} buttonText="Edit" />
+                <div>
+                    <div>
+                        <h3>WAREHOUSE ADDRESS:</h3>
+                        <p>{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</p>
+                    </div>
+                    <div>
+                        <div>
+                            <h3>CONTACT NAME:</h3>
+                            <p>{contact?.name}</p>
+                            <p>{contact?.position}</p>
+                        </div>
+                        <div>
+                            <h3>CONTACT INFORMATION</h3>
+                            <p>{contact?.phone}</p>
+                            <p>{contact?.email}</p>
+                        </div>
+                    </div>
                 </div>
-            </>
+                <SelectedWarehouseInventoryListColumns />
+                <ul className="warehouse-list__list">
+                    {inventory.map((item) => (
+                        <SelectedWarehouseInventoryListItem
+                            key={item.id}
+                            item={item}
+                        />
+                    ))}
+                </ul>
+            </div>
         );
     }
 }

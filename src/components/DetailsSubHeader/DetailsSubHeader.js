@@ -10,7 +10,7 @@ export default function DetailsSubHeader({ title, buttonText }) {
                 <Link to="/warehouses">
                     <img src={backSymbol} alt="back button" />
                 </Link>
-                <h1 className="header__title">{title}</h1>
+                <h1 className="details-header__title">{title}</h1>
             </div>
             <Link to={`/warehouses/${title}/edit`}>
                 <button type="button" className="blue-button">
