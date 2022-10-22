@@ -1,22 +1,12 @@
-// _GLOBAL.SCSS //
+@use "./fonts" as *;
+@use "./variables" as *;
 
-@use './variables' as *;
-
-
-* { box-sizing: border-box; }
+* {
+    font-family: TitilliumWeb-Regular;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        $bgColorTop 0,
-        $bgColorTop 186px,
-        $bgColorBottom 187px,
-        $bgColorBottom 100%
-    );
-    border: 0;
-    padding-top: 32px;
-    padding-right: 130px;
-    padding-left: 130px;
-    padding-bottom: 48px;
+    background-color: $light-grey;
 }
