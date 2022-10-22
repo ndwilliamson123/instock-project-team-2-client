@@ -41,6 +41,7 @@ export default class SelectedWarehouse extends Component {
                     title={warehouse?.name}
                     buttonText="Edit"
                     id={this.state.warehouse.id}
+                    warehouseOrInventory="warehouses"
                 />
                 <div className="selected-warehouse-inventory-list__info">
                     <div className="selected-warehouse-inventory-list__info-address">
