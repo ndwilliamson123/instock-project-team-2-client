@@ -4,7 +4,7 @@ import closeIcon from "../../assets/icons/close-24px.svg";
 import "./DeleteModal.scss";
 import IconButton from "../Buttons/IconButton/IconButton.js";
 
-function DeleteModal({ onClose, onDelete, modalName }) {
+function DeleteModal({ onClose, onDelete, modalText, modalTitle }) {
   return (
     <div className="modal">
       <div className="modal__popup-content">
@@ -12,11 +12,8 @@ function DeleteModal({ onClose, onDelete, modalName }) {
           <div className="modal__close-icon">
             <IconButton image={closeIcon} alt="close-icon" onClick={onClose} />
           </div>
-          <h2 className="modal__title">Delete {modalName} warehouse?</h2>
-          <p className="modal__text">
-            Please confirm that you'd like to delete {modalName} from the list
-            of warehouses. You won't be able to undo this action.
-          </p>
+          <h2 className="modal__title"> {modalTitle}</h2>
+          <p className="modal__text">{modalText}</p>
         </div>
         <div className="modal__button-wrapper">
           <WhiteButton buttonText="Cancel" onClick={onClose} />
@@ -27,3 +24,4 @@ function DeleteModal({ onClose, onDelete, modalName }) {
   );
 }
 export default DeleteModal;
+

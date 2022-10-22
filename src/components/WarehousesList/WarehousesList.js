@@ -64,7 +64,9 @@ export default class WareHousesList extends Component {
         </ul>
         {modalId !== "" ? (
           <DeleteModal
-            modalName={this.state.modalName}
+            modalTitle={`Delete ${this.state.modalName} warehouse?`}
+            modalText={`Please confirm that you'd like to delete ${this.state.modalName} from the list
+            of warehouses. You won't be able to undo this action.`}
             onClose={() =>
               this.setState({
                 modalId: "",
