@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import backSymbol from "../../assets/icons/arrow_back-24px.svg";
 import editSymbol from "../../assets/icons/edit-24px-white.svg";
 
-export default function DetailsSubHeader({ title, buttonText }) {
+export default function DetailsSubHeader({ title, buttonText, id }) {
     return (
         <div className="details-header__container">
             <div>
@@ -12,7 +12,7 @@ export default function DetailsSubHeader({ title, buttonText }) {
                 </Link>
                 <h1 className="details-header__title">{title}</h1>
             </div>
-            <Link to={`/warehouses/${title}/edit`}>
+            <Link to={`/warehouses/${id}/edit`}>
                 <button type="button" className="blue-button">
                     <img src={editSymbol} alt="buttonpic" />
                     <span>{buttonText}</span>

@@ -1,15 +1,12 @@
 import "./SelectedWarehouse.scss";
 import { Component } from "react";
 import axios from "axios";
-import { SelectedWarehouseInventoryListItem } from "../index";
-
 import {
+    SelectedWarehouseInventoryListItem,
     DetailsSubHeader,
     SelectedWarehouseInventoryListColumns,
 } from "../index";
 
-//temporary import of inventory data, will remove once backend is set up
-const inventories = require("../../assets/TEMP_DATA/inventories.json");
 export default class SelectedWarehouse extends Component {
     state = {
         warehouse: {},
@@ -18,20 +15,14 @@ export default class SelectedWarehouse extends Component {
 
     componentDidMount() {
         axios
-            .get(`http://localhost:8080/warehouses`)
+            .get(
+                `http://localhost:8080/warehouses/${this.props.match.params.warehouseID}`
+            )
             .then((response) => {
+                //API returns an array, 0 index is the selected warehouse, 1 index is an array of the inventory items at selected warehouse
                 this.setState({
-                    warehouse: response.data.find(
-                        (warehouse) =>
-                            warehouse.name ===
-                            this.props.match.params.warehouseName
-                    ),
-                    //Will need to replace this with a second axios call once backend is set up
-                    inventory: inventories.filter(
-                        (item) =>
-                            item.warehouseName ===
-                            this.props.match.params.warehouseName
-                    ),
+                    warehouse: response.data[0],
+                    inventory: response.data[1],
                 });
             })
             .catch((error) => {
@@ -46,7 +37,11 @@ export default class SelectedWarehouse extends Component {
 
         return (
             <div className="selected-warehouse-inventory-list">
-                <DetailsSubHeader title={warehouse?.name} buttonText="Edit" />
+                <DetailsSubHeader
+                    title={warehouse?.name}
+                    buttonText="Edit"
+                    id={this.state.warehouse.id}
+                />
                 <div className="selected-warehouse-inventory-list__info">
                     <div className="selected-warehouse-inventory-list__info-address">
                         <h3>WAREHOUSE ADDRESS:</h3>

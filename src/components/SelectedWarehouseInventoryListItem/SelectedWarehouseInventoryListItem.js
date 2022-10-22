@@ -5,15 +5,13 @@ import deleteSymbol from "../../assets/icons/delete_outline-24px.svg";
 import editSymbol from "../../assets/icons/edit-24px.svg";
 
 export default function SelectedWarehouseInventoryListItem({ item }) {
-    const { itemName, category, status, quantity } = item;
-
-    console.log(status);
+    const { itemName, category, status, quantity, id } = item;
 
     return (
         <li className="selected-warehouse-inventory-list-item">
             <div className="selected-warehouse-inventory-list-item__name">
                 <h3>INVENTORY ITEM</h3>
-                <Link to={`/warehouses/${itemName}`}>
+                <Link to={`/inventory/${id}`}>
                     <div>
                         <p>{itemName}</p>
                         <img src={arrowSymbol} alt="" />
@@ -39,10 +37,10 @@ export default function SelectedWarehouseInventoryListItem({ item }) {
                 <p>{quantity}</p>
             </div>
             <div className="selected-warehouse-inventory-list-item__actions">
-                <Link to={`/inventory/${itemName}/delete`}>
+                <Link to={`/inventory/${id}/delete`}>
                     <img src={deleteSymbol} alt="delete button" />
                 </Link>
-                <Link to={`/inventory/${itemName}/edit`}>
+                <Link to={`/inventory/${id}/edit`}>
                     <img src={editSymbol} alt="edit button" />
                 </Link>
             </div>

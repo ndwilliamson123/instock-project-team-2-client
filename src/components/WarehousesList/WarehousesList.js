@@ -23,13 +23,13 @@ export default class WareHousesList extends Component {
                 });
             })
             .catch((error) => {
-                console.log(error)
-                alert(error)
+                console.log(error);
+                alert(error);
             });
     }
 
     render() {
-        const { warehouses } = this.state
+        const { warehouses } = this.state;
         return (
             <>
                 <Route
