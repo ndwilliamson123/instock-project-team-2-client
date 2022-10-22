@@ -5,6 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 function Header() {
   return (
     <header className="header">
+        <div className="header__content-wrapper">
       <Link to="/">
         <div>
           <img
@@ -34,6 +35,7 @@ function Header() {
           <p>Inventory</p>
         </NavLink>
       </nav>
+      </div>
     </header>
   );
 }
