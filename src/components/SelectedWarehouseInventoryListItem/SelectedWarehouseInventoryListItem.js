@@ -7,6 +7,8 @@ import editSymbol from "../../assets/icons/edit-24px.svg";
 export default function SelectedWarehouseInventoryListItem({ item }) {
     const { itemName, category, status, quantity } = item;
 
+    console.log(status);
+
     return (
         <li className="selected-warehouse-inventory-list-item">
             <div className="selected-warehouse-inventory-list-item__name">
@@ -24,7 +26,13 @@ export default function SelectedWarehouseInventoryListItem({ item }) {
             </div>
             <div className="selected-warehouse-inventory-list-item__status">
                 <h3>STATUS</h3>
-                <p>{status}</p>
+                <p
+                    className={
+                        status === "In Stock" ? "in-stock" : "out-of-stock"
+                    }
+                >
+                    {status}
+                </p>
             </div>
             <div className="selected-warehouse-inventory-list-item__quantity">
                 <h3>QTY</h3>

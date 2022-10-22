@@ -28,6 +28,7 @@
 
     h3 {
         @include table-header;
+        margin-bottom: 4px;
 
         @include tablet {
             display: none;
@@ -112,6 +113,25 @@
         @include tablet {
             order: 0;
             justify-content: center;
+        }
+
+        p {
+            @include body-medium;
+            width: fit-content;
+            padding: 4px 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 20px;
+        }
+
+        .in-stock {
+            color: #158463;
+            background: rgba(21, 132, 99, 0.07);
+        }
+
+        .out-of-stock {
+            color: #C94515;
+            background: rgba(201, 69, 21, 0.07);
         }
     }
 
