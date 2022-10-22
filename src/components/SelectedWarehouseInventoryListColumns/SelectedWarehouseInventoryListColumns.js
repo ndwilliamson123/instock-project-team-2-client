@@ -17,7 +17,7 @@ export default function SelectedWarehouseInventoryListColumns() {
                 <img src={sortSymbol} alt="" />
             </div>
             <div>
-                <h3>QTY</h3>
+                <h3>QUANTITY</h3>
                 <img src={sortSymbol} alt="" />
             </div>
             <div>

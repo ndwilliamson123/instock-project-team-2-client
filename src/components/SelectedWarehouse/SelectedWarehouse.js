@@ -45,28 +45,28 @@ export default class SelectedWarehouse extends Component {
         const { contact } = this.state.warehouse;
 
         return (
-            <div className="warehouse-list">
-                <DetailsSubHeader title={warehouse.name} buttonText="Edit" />
-                <div>
-                    <div>
+            <div className="selected-warehouse-inventory-list">
+                <DetailsSubHeader title={warehouse?.name} buttonText="Edit" />
+                <div className="selected-warehouse-inventory-list__info">
+                    <div className="selected-warehouse-inventory-list__info-address">
                         <h3>WAREHOUSE ADDRESS:</h3>
-                        <p>{`${warehouse.address}, ${warehouse.city}, ${warehouse.country}`}</p>
+                        <p>{`${warehouse?.address}, ${warehouse?.city}, ${warehouse?.country}`}</p>
                     </div>
-                    <div>
+                    <div className="selected-warehouse-inventory-list__info-contact">
                         <div>
                             <h3>CONTACT NAME:</h3>
                             <p>{contact?.name}</p>
                             <p>{contact?.position}</p>
                         </div>
                         <div>
-                            <h3>CONTACT INFORMATION</h3>
+                            <h3>CONTACT INFORMATION:</h3>
                             <p>{contact?.phone}</p>
                             <p>{contact?.email}</p>
                         </div>
                     </div>
                 </div>
                 <SelectedWarehouseInventoryListColumns />
-                <ul className="warehouse-list__list">
+                <ul className="selected-warehouse-inventory-list__list">
                     {inventory.map((item) => (
                         <SelectedWarehouseInventoryListItem
                             key={item.id}

@@ -18,16 +18,16 @@ export default function SelectedWarehouseInventoryListItem({ item }) {
                     </div>
                 </Link>
             </div>
-            <div className="selected-warehouse-inventory-list-item__address">
+            <div className="selected-warehouse-inventory-list-item__category">
                 <h3>CATEGORY</h3>
                 <p>{category}</p>
             </div>
-            <div className="selected-warehouse-inventory-list-item__contact-name">
+            <div className="selected-warehouse-inventory-list-item__status">
                 <h3>STATUS</h3>
                 <p>{status}</p>
             </div>
-            <div className="selected-warehouse-inventory-list-item__contact-info">
-                <h3>QUANTITY</h3>
+            <div className="selected-warehouse-inventory-list-item__quantity">
+                <h3>QTY</h3>
                 <p>{quantity}</p>
             </div>
             <div className="selected-warehouse-inventory-list-item__actions">

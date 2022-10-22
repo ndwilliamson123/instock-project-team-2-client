@@ -28,6 +28,12 @@
         display: flex;
         align-items: center;
 
+        &:nth-child(4) {
+            @include desktop {
+                justify-content: center;
+            }
+        }
+
         &:last-child {
             justify-content: flex-end;
         }
