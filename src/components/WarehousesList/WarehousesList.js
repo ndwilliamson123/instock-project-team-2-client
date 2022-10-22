@@ -12,6 +12,7 @@ export default class WareHousesList extends Component {
   state = {
     warehouses: [],
     modalId: "",
+    modalName: "",
   };
 
   componentDidMount() {
@@ -55,6 +56,7 @@ export default class WareHousesList extends Component {
               deleteWarehouse={() =>
                 this.setState({
                   modalId: warehouse.id,
+                  modalName: warehouse.name,
                 })
               }
             />
@@ -62,6 +64,7 @@ export default class WareHousesList extends Component {
         </ul>
         {modalId !== "" ? (
           <DeleteModal
+            modalName={this.state.modalName}
             onClose={() =>
               this.setState({
                 modalId: "",
