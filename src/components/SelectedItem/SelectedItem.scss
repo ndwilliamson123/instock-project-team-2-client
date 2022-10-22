@@ -34,7 +34,12 @@
 
         @include tablet {
             display: flex;
-            align-items: center;
+            padding-bottom: 32px;
+            margin-top: 24px;
+        }
+
+        @include desktop {
+            margin-left: 40px;
         }
 
         h3 {
@@ -46,6 +51,26 @@
         p {
             @include body-medium;
         }
+
+        & > div {
+            @include tablet {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+
+                & > div {
+                    margin-right: 24px;
+                    width: 65%;
+                }
+            }
+        }
+
+        & > div:first-child {
+            @include tablet {
+                border-right: 1px solid $cloud;
+                margin-right: 40px;
+            }
+        }
     }
 
     &__description {
@@ -53,12 +78,11 @@
         flex-direction: column;
         margin-bottom: 16px;
         margin-right: 24px;
+        width: 100%;
 
         @include tablet {
-            margin-top: 24px;
-            margin-right: 32px;
-            margin-left: 32px;
-            width: 25%;
+            margin-bottom: 0;
+            padding-bottom: 32px;
         }
     }
 
@@ -68,12 +92,7 @@
         margin-bottom: 16px;
 
         @include tablet {
-            border-left: 1px solid $cloud;
-            padding-left: 40px;
-        }
-
-        @include desktop {
-            margin-left: 80px;
+            margin-bottom: 0;
         }
 
         & > div:first-child {
@@ -99,13 +118,15 @@
             width: 50%;
         }
 
-        p {
-            width: fit-content;
-            padding: 4px 8px;
-            text-transform: uppercase;
-            font-size: 11px;
-            font-weight: 600;
-            border-radius: 20px;
+        & > div:first-child {
+            p {
+                width: fit-content;
+                padding: 4px 8px;
+                text-transform: uppercase;
+                font-size: 11px;
+                font-weight: 600;
+                border-radius: 20px;
+            }
         }
 
         .in-stock {
@@ -114,7 +135,7 @@
         }
 
         .out-of-stock {
-            color: #C94515;
+            color: #c94515;
             background: rgba(201, 69, 21, 0.07);
         }
     }

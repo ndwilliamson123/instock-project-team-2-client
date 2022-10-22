@@ -30,35 +30,39 @@ export default class SelectedItem extends Component {
                     warehouseOrInventory="inventory"
                 />
                 <div className="selected-item__info">
-                    <div className="selected-item__description">
-                        <h3>Item Description:</h3>
-                        <p>{item.description}</p>
-                    </div>
-                    <div className="selected-item__category">
-                        <h3>Category:</h3>
-                        <p>{item.category}</p>
-                    </div>
-                    <div className="selected-item__status-quantity">
-                        <div>
-                            <h3>Status:</h3>
-                            <p
-                                className={
-                                    item.status === "In Stock"
-                                        ? "in-stock"
-                                        : "out-of-stock"
-                                }
-                            >
-                                {item.status}
-                            </p>
+                    <div>
+                        <div className="selected-item__description">
+                            <h3>Item Description:</h3>
+                            <p>{item.description}</p>
                         </div>
-                        <div>
-                            <h3>Quantity:</h3>
-                            <p>{item.quantity}</p>
+                        <div className="selected-item__category">
+                            <h3>Category:</h3>
+                            <p>{item.category}</p>
                         </div>
                     </div>
-                    <div className="selected-item__warehouse">
-                        <h3>Warehouse:</h3>
-                        <p>{item.warehouseName}</p>
+                    <div>
+                        <div className="selected-item__status-quantity">
+                            <div>
+                                <h3>Status:</h3>
+                                <p
+                                    className={
+                                        item.status === "In Stock"
+                                            ? "in-stock"
+                                            : "out-of-stock"
+                                    }
+                                >
+                                    {item.status}
+                                </p>
+                            </div>
+                            <div>
+                                <h3>Quantity:</h3>
+                                <p>{item.quantity}</p>
+                            </div>
+                        </div>
+                        <div className="selected-item__warehouse">
+                            <h3>Warehouse:</h3>
+                            <p>{item.warehouseName}</p>
+                        </div>
                     </div>
                 </div>
             </div>
