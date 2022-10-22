@@ -36,7 +36,7 @@ export default class EditWarehouse extends React.Component {
             // TODO : Leaving the commented code once API is ready
             // console.log("Form has been submitted")
             // const port = 8080;
-            // axios.post(`http://localhost:${port}`, { var: "test" }).then().catch();
+            // axios.patch(`http://localhost:${port}`, { var: "test" }).then().catch();
         }
     }
 
@@ -62,7 +62,6 @@ export default class EditWarehouse extends React.Component {
         let errors = {};
         let formIsValid = true;
 
-        //Name
         if (!fields["name"]) {
             formIsValid = false;
             errors["name"] = "This field is required";
@@ -87,9 +86,9 @@ export default class EditWarehouse extends React.Component {
             formIsValid = false;
             errors["position"] = "This field is required";
         }
-        if (!fields["phonenumber"]) {
+        if (!fields["phone"]) {
             formIsValid = false;
-            errors["phonenumber"] = "This field is required";
+            errors["phone"] = "This field is required";
         }
         if (!fields["email"]) {
             formIsValid = false;
@@ -183,12 +182,12 @@ export default class EditWarehouse extends React.Component {
                             />
                             <WarehouseInput
                                 variable="Phone Number"
-                                fields={this.state.fields["phonenumber"]}
+                                fields={this.state.fields["phone"]}
                                 handleChange={this.handleChange.bind(
                                     this,
-                                    "phonenumber"
+                                    "phone"
                                 )}
-                                error={this.state.errors["phonenumber"]}
+                                error={this.state.errors["phone"]}
                             />
                             <WarehouseInput
                                 variable="Email"
@@ -206,11 +205,7 @@ export default class EditWarehouse extends React.Component {
                             to="/warehouses"
                             className="edit-warehouse__cancel-link"
                         >
-                            <WhiteButton
-                                buttonText="Cancel"
-                                type="click"
-                                buttonFunction={this.resetFields}
-                            />
+                            <WhiteButton buttonText="Cancel" type="click" />
                         </Link>
                         <BlueButton buttonText="Save" type="submit" />
                     </div>

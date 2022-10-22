@@ -62,7 +62,6 @@ export default class AddNewWarehouse extends React.Component {
         let errors = {};
         let formIsValid = true;
 
-        //Name
         if (!fields["name"]) {
             formIsValid = false;
             errors["name"] = "This field is required";
@@ -87,9 +86,9 @@ export default class AddNewWarehouse extends React.Component {
             formIsValid = false;
             errors["position"] = "This field is required";
         }
-        if (!fields["phonenumber"]) {
+        if (!fields["phone"]) {
             formIsValid = false;
-            errors["phonenumber"] = "This field is required";
+            errors["phone"] = "This field is required";
         }
         if (!fields["email"]) {
             formIsValid = false;
@@ -181,12 +180,12 @@ export default class AddNewWarehouse extends React.Component {
                             />
                             <WarehouseInput
                                 variable="Phone Number"
-                                fields={this.state.fields["phonenumber"]}
+                                fields={this.state.fields["phone"]}
                                 handleChange={this.handleChange.bind(
                                     this,
-                                    "phonenumber"
+                                    "phone"
                                 )}
-                                error={this.state.errors["phonenumber"]}
+                                error={this.state.errors["phone"]}
                             />
                             <WarehouseInput
                                 variable="Email"
@@ -201,11 +200,7 @@ export default class AddNewWarehouse extends React.Component {
                     </div>
                     <div className="anw__submit">
                         <Link to="/warehouses" className="anw__cancel-link">
-                            <WhiteButton
-                                buttonText="Cancel"
-                                type="click"
-                                buttonFunction={this.resetFields}
-                            />
+                            <WhiteButton buttonText="Cancel" type="click" />
                         </Link>
                         <BlueButton
                             buttonText="+ Add Warehouse"
