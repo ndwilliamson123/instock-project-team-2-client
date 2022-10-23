@@ -6,7 +6,7 @@ import editSymbol from "../../assets/icons/edit-24px.svg";
 import IconButton from "../Buttons/IconButton/IconButton.js";
 
 export default function WarehouseListItem({ warehouse, deleteWarehouse }) {
-    const { name, address, city, country } = warehouse;
+    const { name, address, city, country, id } = warehouse;
     const {
         name: contactName,
         phone: contactPhone,
@@ -17,7 +17,7 @@ export default function WarehouseListItem({ warehouse, deleteWarehouse }) {
         <li className="warehouse-list-item">
             <div className="warehouse-list-item__name">
                 <h3>WAREHOUSE</h3>
-                <Link to={`/warehouses/${name}`}>
+                <Link to={`/warehouses/${id}`}>
                     <div>
                         <p>{name}</p>
                         <img src={arrowSymbol} alt="" />
@@ -38,9 +38,8 @@ export default function WarehouseListItem({ warehouse, deleteWarehouse }) {
                 <p>{contactEmail}</p>
             </div>
             <div className="warehouse-list-item__actions">
-                <IconButton image={deleteSymbol} alt="delete button" onClick={deleteWarehouse}/>
-        
-                <Link to={`/warehouses/${name}/edit`}>
+            <IconButton image={deleteSymbol} alt="delete button" onClick={deleteWarehouse}/>
+                <Link to={`/warehouses/${id}/edit`}>
                     <img src={editSymbol} alt="edit button" />
                 </Link>
             </div>
