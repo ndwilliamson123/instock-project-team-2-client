@@ -7,8 +7,7 @@ import {
     WarehouseInput,
     AddEditSubheader,
 } from "../../components/index";
-// TODO : Leaving the commented code once API is ready
-// import axios from "axios";
+import axios from "axios";
 
 export default class EditWarehouse extends React.Component {
     constructor() {
@@ -41,6 +40,20 @@ export default class EditWarehouse extends React.Component {
                 },
             },
         };
+    }
+
+    componentDidMount() {
+        axios
+            .get(`http://localhost:8080/warehouses`)
+            .then((response) => {
+                this.setState({
+                    warehouses: response.data,
+                });
+            })
+            .catch((error) => {
+                console.log(error);
+                alert(error);
+            });
     }
 
     contactSubmit(e) {
