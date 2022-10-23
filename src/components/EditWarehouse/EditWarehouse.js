@@ -10,8 +10,8 @@ import {
 import axios from "axios";
 
 export default class EditWarehouse extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             fields: {
                 id: "",
@@ -43,16 +43,21 @@ export default class EditWarehouse extends React.Component {
     }
 
     componentDidMount() {
+        const port = 8080;
         axios
-            .get(`http://localhost:8080/warehouses`)
+            .get(`http://localhost:${port}/warehouses`)
             .then((response) => {
-                this.setState({
-                    warehouses: response.data,
+                const warehouseId = this.props.match.params.warehouseID;
+                const warehouseData = response.data;
+
+                const reqWarehouseData = warehouseData.find((warehouseData) => {
+                    return warehouseData.id === warehouseId;
                 });
+
+                this.setState({ fields: reqWarehouseData });
             })
-            .catch((error) => {
-                console.log(error);
-                alert(error);
+            .catch((e) => {
+                console.log(e);
             });
     }
 
@@ -60,11 +65,21 @@ export default class EditWarehouse extends React.Component {
         e.preventDefault();
 
         if (this.handleValidation()) {
-            console.log(this.state);
-            // TODO : Leaving the commented code once API is ready
-            // console.log("Form has been submitted")
-            // const port = 8080;
-            // axios.patch(`http://localhost:${port}`, { var: "test" }).then().catch();
+            console.log("Form has been submitted");
+            const warehouseId = this.props.match.params.warehouseID;
+            const editData = this.state.fields;
+            console.log(editData);
+
+            const port = 8080;
+            axios
+                .put(
+                    `http://localhost:${port}/warehouses/${warehouseId}`,
+                    editData
+                )
+                .then(console.log("Edit is successful"))
+                .catch((e) => {
+                    console.log(e);
+                });
         }
     }
 
