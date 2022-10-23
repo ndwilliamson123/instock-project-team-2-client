@@ -15,11 +15,11 @@ export default function Inventory() {
       />
       <Route
         exact
-        path="/inventory/:itemName"
+        path="/inventory/:itemID"
         component={(props) => <SelectedItem {...props} />}
       />
       <Route
-        path="/inventory/:itemName/edit"
+        path="/inventory/:itemID/edit"
         component={(props) => <EditItem {...props} />}
       />
       <Route
