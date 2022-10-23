@@ -1,17 +1,18 @@
 import "./WarehousesList.scss";
 import { Component } from "react";
-import { Route } from "react-router-dom";
 import {
-  DeleteWarehouse,
   MainSubHeader,
   WarehousesListColumns,
   WarehousesListItem,
+  DeleteModal,
 } from "../index";
 import axios from "axios";
 
 export default class WareHousesList extends Component {
   state = {
     warehouses: [],
+    modalId: "",
+    modalName: "",
   };
 
   componentDidMount() {
@@ -28,27 +29,53 @@ export default class WareHousesList extends Component {
       });
   }
 
+  deleteWarehouseApiCall() {
+    axios
+      .delete(`http://localhost:8080/warehouses/${this.state.modalId}`)
+      .then((response) => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(error);
+      });
+  }
+
   render() {
-    const { warehouses } = this.state;
+    const { warehouses, modalId } = this.state;
+
     return (
-      <>
-        <Route
-          path="/warehouses/:warehouseName/delete"
-          component={(props) => <DeleteWarehouse {...props} />}
-        />
-        <div className="warehouse-list">
-          <MainSubHeader
-            title="Warehouses"
-            buttonText={"+ Add New Warehouse"}
+      <div className="warehouse-list">
+        <MainSubHeader title="Warehouses" buttonText={"+ Add New Warehouse"} />
+        <WarehousesListColumns />
+        <ul className="warehouse-list__list">
+          {warehouses.map((warehouse) => (
+            <WarehousesListItem
+              key={warehouse.id}
+              warehouse={warehouse}
+              deleteWarehouse={() =>
+                this.setState({
+                  modalId: warehouse.id,
+                  modalName: warehouse.name,
+                })
+              }
+            />
+          ))}
+        </ul>
+        {modalId !== "" ? (
+          <DeleteModal
+            modalTitle={`Delete ${this.state.modalName} warehouse?`}
+            modalText={`Please confirm that you'd like to delete ${this.state.modalName} from the list
+            of warehouses. You won't be able to undo this action.`}
+            onClose={() =>
+              this.setState({
+                modalId: "",
+              })
+            }
+            onDelete={() => this.deleteWarehouseApiCall()}
           />
-          <WarehousesListColumns />
-          <ul className="warehouse-list__list">
-            {warehouses.map((warehouse) => (
-              <WarehousesListItem key={warehouse.id} warehouse={warehouse} />
-            ))}
-          </ul>
-        </div>
-      </>
+        ) : null}
+      </div>
     );
   }
 }

@@ -24,6 +24,8 @@ const DeleteWarehouse = () => {
         console.log(error);
         alert(error);
       });
+    
+      
   }
 
   

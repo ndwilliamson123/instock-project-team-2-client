@@ -1,16 +1,20 @@
-@mixin tablet {
-    @media screen and (min-width: 767px) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media screen and (min-width: 1280px) {
-        @content;
-    }
-}
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .anw {
+    margin: 0 16px;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    background-color: $white;
+    @include tablet {
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+    @include desktop {
+        width: 1020px;
+        margin: auto;
+    }
+
     &__pageheader {
         display: flex;
         border-bottom: #bdc5d5 solid 1px;

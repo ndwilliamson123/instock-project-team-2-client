@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import arrowSymbol from "../../assets/icons/chevron_right-24px.svg";
 import deleteSymbol from "../../assets/icons/delete_outline-24px.svg";
 import editSymbol from "../../assets/icons/edit-24px.svg";
+import IconButton from "../Buttons/IconButton/IconButton.js";
 
 export default function WarehouseListItem({ warehouse }) {
     const { name, address, city, country, id } = warehouse;
@@ -16,7 +17,7 @@ export default function WarehouseListItem({ warehouse }) {
         <li className="warehouse-list-item">
             <div className="warehouse-list-item__name">
                 <h3>WAREHOUSE</h3>
-                <Link to={`/warehouses/${name}`}>
+                <Link to={`/warehouses/${id}`}>
                     <div>
                         <p>{name}</p>
                         <img src={arrowSymbol} alt="" />
