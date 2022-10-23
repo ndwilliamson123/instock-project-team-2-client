@@ -1,9 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import { DeleteWarehouse } from "./components";
+
 import './App.scss';
 
+
 import InventoryAll from "./components/InventoryAll/InventoryAll";
+import WareHousesList from "./components/WarehousesList/WarehousesList";
 
 export default function App() {
   return (
@@ -15,6 +19,14 @@ export default function App() {
           <Switch>
             <Route exact path="/inventory">
               <InventoryAll />
+            </Route>
+
+            <Route exact path="/warehouses">
+              <WareHousesList />
+            </Route>
+
+            <Route exact path="/warehouses/:warehouseName/:warehouseId/delete">
+              <DeleteWarehouse />
             </Route>
 
           </Switch>

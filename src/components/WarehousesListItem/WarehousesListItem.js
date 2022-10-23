@@ -5,7 +5,7 @@ import deleteSymbol from "../../assets/icons/delete_outline-24px.svg";
 import editSymbol from "../../assets/icons/edit-24px.svg";
 
 export default function WarehouseListItem({ warehouse }) {
-    const { name, address, city, country } = warehouse;
+    const { name, address, city, country, id } = warehouse;
     const {
         name: contactName,
         phone: contactPhone,
@@ -37,7 +37,7 @@ export default function WarehouseListItem({ warehouse }) {
                 <p>{contactEmail}</p>
             </div>
             <div className="warehouse-list-item__actions">
-                <Link to={`/warehouses/${name}/delete`}>
+                <Link to={`/warehouses/${name}/${id}/delete`}>
                     <img src={deleteSymbol} alt="delete button" />
                 </Link>
                 <Link to={`/warehouses/${name}/edit`}>
