@@ -46,8 +46,6 @@ export default class AddNewWarehouse extends React.Component {
         e.preventDefault();
 
         if (this.handleValidation()) {
-            console.log(this.state.fields);
-            // TODO : Leaving the commented code once API is ready
             const port = 8080;
             axios
                 .post(`http://localhost:${port}/warehouses`, {
