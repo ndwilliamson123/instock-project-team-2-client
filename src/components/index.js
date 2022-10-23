@@ -1,7 +1,23 @@
-
-
-//example
-// export { default as Header } from "./Header/Header";
-// export { default as COMPONENT_NAME } from "./COMPONENT_NAME/COMPONENT_NAME";
-
-//then other components just need to reference this 'index.js' file to import all components in this '\components' folder
+export { default as WarehousesList } from "./WarehousesList/WarehousesList";
+export { default as WarehousesListItem } from "./WarehousesListItem/WarehousesListItem";
+export { default as AddNewWarehouse } from "./AddNewWarehouse/AddNewWarehouse";
+export { default as SelectedWarehouse } from "./SelectedWarehouse/SelectedWarehouse";
+export { default as EditWarehouse } from "./EditWarehouse/EditWarehouse";
+export { default as InventoryList } from "./InventoryList/InventoryList";
+export { default as AddNewItem } from "./AddNewItem/AddNewItem";
+export { default as SelectedItem } from "./SelectedItem/SelectedItem";
+export { default as EditItem } from "./EditItem/EditItem";
+export { default as DeleteItem } from "./DeleteItem/DeleteItem";
+export { default as BlueButton } from "./Buttons/BlueButton/BlueButton";
+export { default as RedButton } from "./Buttons/RedButton/RedButton";
+export { default as WhiteButton } from "./Buttons/WhiteButton/WhiteButton";
+export { default as MainSubHeader } from "./MainSubHeader/MainSubHeader";
+export { default as WarehousesListColumns } from "./WarehousesListColumns/WarehousesListColumns";
+export { default as Footer } from "./Footer/Footer";
+export { default as DeleteModal } from "./DeleteModal/DeleteModal.js";
+export { default as WarehouseInput } from "./WarehouseInput/WarehouseInput";
+export { default as AddEditSubheader } from "./AddEditSubheader/AddEditSubheader";
+export { default as DetailsSubHeader } from "./DetailsSubHeader/DetailsSubHeader";
+export { default as SelectedWarehouseInventoryListColumns } from "./SelectedWarehouseInventoryListColumns/SelectedWarehouseInventoryListColumns";
+export { default as SelectedWarehouseInventoryListItem } from "./SelectedWarehouseInventoryListItem/SelectedWarehouseInventoryListItem";
+export { default as Header } from "./header/Header.js";

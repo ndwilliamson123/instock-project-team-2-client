@@ -1,0 +1,27 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer {
+    background-color: $light-grey;
+    bottom: 0%;
+    width: 100%;
+    margin-top: 40px;
+
+    &__container {
+        @include page-sidemargins;
+        @include desktop {
+            padding-bottom: 48px;
+        }
+        @include tablet {
+            padding-bottom: 40px;
+        }
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__message {
+        @include body-small;
+        color: $slate;
+    }
+}

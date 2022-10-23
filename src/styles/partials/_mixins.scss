@@ -1,0 +1,108 @@
+@use "variables" as *;
+@use "fonts" as *;
+
+// Media Queries
+
+@mixin tablet {
+    @media screen and (min-width: $tabletsize) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktopsize) {
+        @content;
+    }
+}
+
+// TypeKit
+
+@mixin page-header {
+    @include tablet {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    font-family: TitilliumWeb-SemiBold;
+    font-size: 28px;
+    line-height: 36px;
+    color: $instock-black;
+}
+
+@mixin subheader {
+    @include tablet {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    font-family: TitilliumWeb-SemiBold;
+    font-size: 20px;
+    line-height: 28px;
+    color: $instock-black;
+}
+
+@mixin labels {
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    font-family: TitilliumWeb-SemiBold;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+@mixin table-header {
+    @include tablet {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    font-family: TitilliumWeb-SemiBold;
+    font-size: 11px;
+    line-height: 16px;
+    color: $slate;
+}
+
+@mixin body-large {
+    @include tablet {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    font-family: TitilliumWeb-Regular;
+    font-size: 15px;
+    line-height: 26px;
+    color: $instock-black;
+}
+
+@mixin body-medium {
+    @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    font-family: TitilliumWeb-Regular;
+    font-size: 13px;
+    line-height: 20px;
+    color: $instock-black;
+}
+
+@mixin body-small {
+    @include tablet {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    font-family: TitilliumWeb-Regular;
+    font-size: 11px;
+    line-height: 16px;
+    color: $instock-black;
+}
+
+// Note: if you set this on your outer most container, it will do the margins automatically for all 3 media. Can remove if prefer not to use this.
+
+@mixin page-sidemargins {
+    padding: 0 16px;
+    @include tablet {
+        padding: 0 32px;
+    }
+    @include desktop {
+        padding: 0;
+        width: 1020px;
+        margin: auto;
+    }
+}

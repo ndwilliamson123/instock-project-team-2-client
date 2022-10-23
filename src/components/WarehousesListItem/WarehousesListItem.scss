@@ -1,0 +1,161 @@
+@use "./../../styles/partials/global" as *;
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.warehouse-list-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #bdc5d5;
+  margin: auto -24px 16px -24px;
+  padding-top: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr 1fr 1.3fr 1fr;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  @include desktop {
+    grid-template-columns: 1fr 1.9fr 1fr 1fr 1fr;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 27px;
+  }
+
+  h3 {
+    @include table-header;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  p {
+    @include body-medium;
+  }
+
+  &__info {
+    display: flex;
+
+    @include tablet {
+      align-items: center;
+    }
+
+    & > div {
+      width: 50%;
+
+      @include tablet {
+        width: auto;
+        display: flex;
+      }
+    }
+
+    & h3 {
+      margin-bottom: 4px;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      justify-content: center;
+    }
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    & > a > div {
+      display: flex;
+      align-items: center;
+
+      & > p {
+        color: $instock-indigo;
+      }
+
+      & > img {
+        height: 20px;
+      }
+    }
+  }
+
+  &__address {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+
+    @include tablet {
+      margin-top: 0;
+      max-width: 75%;
+      justify-content: center;
+      order: 0;
+    }
+  }
+
+  &__contact-name {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      order: 0;
+      justify-content: center;
+    }
+  }
+
+  &__contact-info {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    order: 4;
+
+    @include tablet {
+      margin-top: 0;
+      order: 0;
+    }
+  }
+
+  &__actions {
+    grid-column: span 2;
+    order: 5;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 19px;
+
+    img {
+      height: 18px;
+    }
+
+    @include tablet {
+      grid-column: span 1;
+      margin-top: 0;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: flex-end;
+
+      & > * {
+        margin-right: 16px;
+      }
+
+      h3 {
+        display: none;
+      }
+    }
+  }
+}

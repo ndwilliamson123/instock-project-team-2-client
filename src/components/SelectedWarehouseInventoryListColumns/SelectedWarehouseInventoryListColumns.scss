@@ -1,0 +1,41 @@
+@use "./../../styles/partials/global" as *;
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.selected-warehouse-inventory-list__columns {
+    display: none;
+    width: 100%;
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        background-color: $light-grey;
+        padding-top: 11px;
+        padding-bottom: 11px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    h3 {
+        @include table-header;
+    }
+
+    img {
+        height: 12px;
+    }
+
+    & > div {
+        display: flex;
+        align-items: center;
+
+        &:nth-child(4) {
+            @include desktop {
+                justify-content: center;
+            }
+        }
+
+        &:last-child {
+            justify-content: flex-end;
+        }
+    }
+}
