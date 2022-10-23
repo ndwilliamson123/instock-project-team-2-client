@@ -65,11 +65,8 @@ export default class EditWarehouse extends React.Component {
         e.preventDefault();
 
         if (this.handleValidation()) {
-            console.log("Form has been submitted");
             const warehouseId = this.props.match.params.warehouseID;
             const editData = this.state.fields;
-            console.log(editData);
-
             const port = 8080;
             axios
                 .put(
