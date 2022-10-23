@@ -6,7 +6,7 @@ import './DeleteWarehouse.scss';
 
 
   
-const DeleteWarehouse = () => {
+const DeleteWH = () => {
 
   let params = useParams();
 
@@ -61,4 +61,4 @@ return (
 }
 
 
-export default DeleteWarehouse;
+export default DeleteWH;

@@ -8,6 +8,7 @@ import './App.scss';
 
 import InventoryAll from "./components/InventoryAll/InventoryAll";
 import WareHousesList from "./components/WarehousesList/WarehousesList";
+import DeleteWH from './components/DeleteWarehouse/DeleteWarehouse';
 
 export default function App() {
   return (
@@ -26,7 +27,7 @@ export default function App() {
             </Route>
 
             <Route exact path="/warehouses/:warehouseName/:warehouseId/delete">
-              <DeleteWarehouse />
+              <DeleteWH />
             </Route>
 
           </Switch>
