@@ -5,7 +5,6 @@ import errorImg from "../../assets/icons/error-24px.svg";
 export default class WarehouseInput extends React.Component {
     render() {
         let { variable, fields, handleChange, error } = this.props;
-
         return (
             <>
                 <div className="warehouse-input">
