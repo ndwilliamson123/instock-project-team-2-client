@@ -1,0 +1,61 @@
+// DELETEWAREHOUSE.SCSS //
+
+
+
+div.deleteWarehouse {
+    margin: auto;
+    min-width: 670px;
+    max-width: 40rem;
+    min-height: 280px;
+    background-color: #ffffff;
+    padding: 21px;
+
+    &__title {
+        margin: 0;
+        margin-bottom: 12px;
+    }
+
+    &__titlebar {
+        margin: auto;
+        display: flex;
+        margin-bottom: 12px;
+    }
+
+    &__body {
+        margin: 0;
+        margin-bottom: 24px;
+    }
+
+    &__buttonbar {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 12px;
+    }
+
+
+    .anchorModalClose {
+        margin-left: auto;
+        text-decoration: none;
+        font-weight: bold;
+        color : #13182C;
+    }
+
+    .anchorModalButton {
+        background-color: #ffffff;
+        padding: 8px 16px;
+        margin-left: 8px;
+        border: 1px solid #BDC5D5;
+        border-radius: 20px;
+    
+        font-size: 14px;
+        text-decoration: none;
+        color : #5C667E;
+    }
+      
+    .anchorModalButton:hover,
+    .anchorModalButton:focus {
+        color: #ffffff;
+        font-weight: bold;
+        background-color: #C94515;
+    }
+}

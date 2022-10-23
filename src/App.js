@@ -1,26 +1,40 @@
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { Footer, Header } from "./components/index";
-import { Warehouses, Inventory, PageNotFound } from "./pages/index";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { DeleteWarehouse } from "./components";
+
+import './App.scss';
+
+
+import InventoryAll from "./components/InventoryAll/InventoryAll";
+import WareHousesList from "./components/WarehousesList/WarehousesList";
+import DeleteWH from './components/DeleteWarehouse/DeleteWarehouse';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Switch>
-        <Route
-          path="/warehouses"
-          component={(props) => <Warehouses {...props} />}
-        />
-        <Route
-          path="/inventory"
-          component={(props) => <Inventory {...props} />}
-        />
-        <Route exact path="/">
-          <Redirect from="/" to={"/warehouses"}></Redirect>
-        </Route>
-        <Route path="/*" component={PageNotFound} />
-      </Switch>
-      <Footer />
-    </BrowserRouter>
+    <>
+      <Router>
+        
+        <div className='main'>
+
+          <Switch>
+            <Route exact path="/inventory">
+              <InventoryAll />
+            </Route>
+
+            <Route exact path="/warehouses">
+              <WareHousesList />
+            </Route>
+
+            <Route exact path="/warehouses/:warehouseName/:warehouseId/delete">
+              <DeleteWH />
+            </Route>
+
+          </Switch>
+
+        </div>
+        
+      </Router>
+    </>
   );
 }
