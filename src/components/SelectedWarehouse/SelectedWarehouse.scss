@@ -1,0 +1,92 @@
+@use "./../../styles/partials/global" as *;
+@use "./../../styles/partials/variables" as *;
+@use "./../../styles/partials/mixins" as *;
+
+.selected-warehouse-inventory-list {
+    margin: 0 16px;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    background-color: $white;
+
+    @include tablet {
+        margin-left: 32px;
+        margin-right: 32px;
+    }
+
+    @include desktop {
+        width: 1020px;
+        margin: auto;
+    }
+
+    & a {
+        @include labels;
+        text-decoration: none;
+        color: $instock-indigo;
+
+        &:visited {
+            color: $instock-indigo;
+        }
+    }
+
+    &__info {
+        @include tablet {
+            display: flex;
+            align-items: center;
+        }
+
+        h3 {
+            @include table-header;
+        }
+
+        &-address {
+            display: flex;
+            flex-direction: column;
+            margin: 16px auto 36px 24px;
+
+            @include tablet {
+                margin-top: 24px;
+                margin-right: 32px;
+                margin-left: 32px;
+                width: 25%;
+            }
+        }
+
+        &-contact {
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 24px;
+            margin-bottom: 16px;
+
+            @include tablet {
+                border-left: 1px solid $cloud;
+                padding-left: 40px;
+            }
+
+            @include desktop {
+                margin-left: 80px;
+            }
+
+            & > div:first-child {
+                width: 48%;
+
+                @include tablet {
+                    width: 60%;
+                    margin-right: 48px;
+                }
+
+                @include desktop {
+                    margin-right: 96px;
+                }
+            }
+        }
+    }
+
+    &__list {
+        margin-left: -16px;
+        margin-right: 24px;
+
+        @include tablet {
+            margin-top: 0;
+        }
+    }
+}
