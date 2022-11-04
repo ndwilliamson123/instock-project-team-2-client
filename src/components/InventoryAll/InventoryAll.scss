@@ -1,0 +1,97 @@
+// INVENTORYALL.SCSS //
+
+div.inventoryAll {
+    margin: 0;
+    background-color: #ffffff;
+    padding-bottom: 12px;
+
+    font-family: 'Titillium Web';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #13182C;
+
+    width: 100%;
+
+    .inventoryAll__table {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-spacing: 0;
+    }
+
+    .inventoryAll__table th {
+        background: #F7F8F9 70%;
+        height: 40px;
+        padding: 8px 8px;
+        
+        font-weight: 600;
+        font-size: 12px;
+        text-align: left;
+        text-transform: uppercase;
+        color: #5C667E;
+    }
+
+    .inventoryAll__table th:nth-of-type(1) { padding-left: 40px; width: 25%; min-width: 140px; }
+    .inventoryAll__table th:nth-of-type(2) { width: 20%; min-width: 100px; }
+    .inventoryAll__table th:nth-of-type(3) { width: 15%; min-width: 70px; }
+    .inventoryAll__table th:nth-of-type(4) { width: 10%; min-width: 50px; }
+    .inventoryAll__table th:nth-of-type(5) { width: 15%; min-width: 70px; }
+    .inventoryAll__table th:nth-of-type(6) { padding-right: 40px; width: 15%; min-width: 70px; }
+
+    .inventoryAll__table td {
+        padding: 8px 8px;
+        border-bottom: 1px solid #BDC5D5;
+    }
+    
+    .inventoryAll__table td:nth-of-type(1) {
+        padding-left: 40px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    .inventoryAll__table td:nth-of-type(6) {
+        padding-right: 40px;
+    }
+
+    
+    a {
+        text-decoration: none;
+    }
+
+
+    .colSort {
+        margin-left: 4px;
+        cursor: pointer;
+    }
+
+    .iconAction {
+        width: 14px;
+        height: 18px;
+        cursor: pointer;
+        vertical-align: text-bottom;
+    }
+
+    .iconStatusNo {
+        padding: 4px 8px;
+        background: rgba(201, 69, 21, 0.07);
+        border-radius: 20px;
+
+        font-size: 10px;
+        color: #C94515;
+        text-transform: uppercase;
+    }
+
+    .iconStatusYes {
+        padding: 4px 8px;
+        background: rgba(21, 132, 99, 0.07);
+        border-radius: 20px;
+
+        font-size: 10px;
+        color: #158463;
+        text-transform: uppercase;
+    }
+
+}
